@@ -1,0 +1,31 @@
+@use 'sass:math';
+
+// функция для расчета адаптирующегося размера текста
+@function fluid($max: 48, $min: 16) {
+  $maxViewportWidth: 1600;
+  $minViewportWidth: 390;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+// функция для перевода px в rem
+@function rem($pixel) {
+   @if math.is-unitless($pixel) { // если не заданы какие то юниты(единицы измерения), которые нельзя использовать при внесении значений в scss миксины и функции, то...
+    @return math.div($pixel, 16) + rem; // $pixel/16 = valueRem
+    // 16 - дефолтное минимальное значение размера шрифта у Chrome, его можно заменить на другое
+  } @else {
+    @error 'Не используйте единицы измерения при работе с функцией scss! Передавайте аргументом только числа.'
+  }
+}

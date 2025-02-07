@@ -1,0 +1,41 @@
+@use '../tools' as *;
+
+.header{
+    color: var(--grey-color-60);
+
+    &-inner{
+        display: flex;
+        justify-content: space-between;
+        padding-block: rem(23);
+        background-color: transparent;
+    }
+
+    &-menu{
+
+        &__list{
+            display: flex;
+            justify-content: space-between;
+            column-gap: rem(54);
+            padding: rem(10);
+            border: var(--border);
+            border-radius: rem(12);
+            background-color: var(--dark-color-6);
+
+            @include laptop{
+                column-gap: rem(36);
+                padding: rem(8);
+            }
+        }
+
+        &__link{
+            padding: rem(14) rem(24);
+
+            &.is-active{
+                background-color: var(--dark-color-10);
+                border-radius: rem(8);
+                color: var(--light-color);
+                pointer-events: none;
+            }
+        }
+    }
+}

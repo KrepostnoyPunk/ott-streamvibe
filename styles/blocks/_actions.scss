@@ -1,0 +1,28 @@
+@use '../tools' as *;
+
+.actions{
+    display: flex;
+    align-items: center;
+    column-gap: fluid(30, 14);
+
+    &__btn{
+        --size: #{rem(34)};
+
+        @include reset-btn;
+
+        @include square(var(--size));
+
+        @include hover{
+            opacity: .7;
+        }
+
+        @include laptop{
+            --size: #{rem(24)};
+        }
+
+        svg{
+            fill: transparent;
+            color: var(--light-color);
+        }
+    }
+}

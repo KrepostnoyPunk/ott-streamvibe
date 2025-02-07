@@ -1,0 +1,38 @@
+@use 'tools' as *;
+
+:root{
+    // цвета
+    --dark-color: #141414;
+
+    --dark-color-12: #1F1F1F;
+    --dark-color-10: #1A1A1A;
+    --dark-color-6: #0F0F0F;
+
+    --grey-color-60: #999999;
+    --grey-color-75: #BFBFBF;
+
+    --light-color: #FFF;
+
+    --red-color: #E50000;
+
+    // шрифты
+    --font-base: 'Inter', sans-serif;
+    --font-accent: 'Kumbh Sans', sans-serif;
+
+    // borders
+    --border: 4px solid var(--dark-color-12);
+
+    // размеры контейнера
+    --container-width: #{rem(1597)}; // такой синтаксис нужен чтобы функция scss корректно работала с переменными css
+    --container-padding-x: #{rem(14)}; // берется из мобилки, по значению отступов от контейнера
+
+    // вертикальный отступ для секций
+    --section-padding-y: fluid(150, 80);
+
+    // длительность переходов
+    --transition-duration: .3s;
+
+    @include laptop{
+        --container-width: #{rem(1280)};
+    }
+}

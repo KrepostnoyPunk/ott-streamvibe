@@ -1,0 +1,114 @@
+@use 'tools' as *; // позволяет использовать переданные в index.scss функции, миксины и пр.
+
+html{
+    &.is-locked{ // класс который предотвращает возможность скролла когда открыто оверлей меню
+        overflow: hidden;
+    }
+}
+
+body{
+    @include fluid-text(18, 14);
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--font-base);
+    font-weight: 400;
+
+    color: var(--gray-color-60);
+    background-color: var(--dark-color);
+
+    line-height: 1.5;
+}
+
+main{
+    flex-grow: 1; // нужно чтобы этот элемент растянулся максимально по высоте занимая все доступное пространство прижимая тем самым footer к низу вне зависимости от объема содержимого
+}
+
+// классы нужны чтобы соблюсти последовательность заголовков при этом сохраняя необходиый стиль
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: var(--light-color);
+}
+
+// изменение семейства шрифтов для заголовков использующих отличный от font-base шрифт
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+    font-family: var(--font-accent);
+    font-weight: 700;
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-weight: 500;
+}
+
+h1, .h1 {
+    @include fluid-text(58, 28);
+}
+
+h2, .h2 {
+    @include fluid-text(48, 24);
+}
+
+h3, .h3 {
+    @include fluid-text(38, 24);
+}
+
+h4, .h4 {
+    @include fluid-text(24, 18);
+}
+
+h5, .h5 {
+    @include fluid-text(22, 18);
+}
+
+h6, .h6 {
+    @include fluid-text(20, 16);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+    color: inherit;
+
+    @include hover{
+        color: var(--light-color);
+    }
+
+    &[class]{
+        text-decoration: none; // отключает подчеркивание только у определенных классов на элементах ссылок
+    }
+}
+
+:focus-visible{ // псевдокласс срабатывающий при фокусировке с клавиатуры
+    outline: rem(2) dashed var(--light-color);
+    outline-offset: rem(2); // отступ(смещение) для обводки
+}
+
+a, button{
+    &[aria-label]{ // селектор по атрибуту aria-label
+        position: relative;
+
+        &::before{ // элемент который увеличивает область нажатия родительского элемента
+            @include abs-center;
+            @include square(rem(44));
+
+            content: '';
+        }
+    }
+}

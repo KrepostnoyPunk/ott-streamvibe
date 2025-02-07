@@ -1,0 +1,431 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+[fill] {
+  fill: currentColor;
+}
+
+[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("/assets/fonts/KumbhSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("/assets/fonts/KumbhSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --dark-color: #141414;
+  --dark-color-12: #1F1F1F;
+  --dark-color-10: #1A1A1A;
+  --dark-color-6: #0F0F0F;
+  --grey-color-60: #999999;
+  --grey-color-75: #BFBFBF;
+  --light-color: #FFF;
+  --red-color: #E50000;
+  --font-base: "Inter", sans-serif;
+  --font-accent: "Kumbh Sans", sans-serif;
+  --border: 4px solid var(--dark-color-12);
+  --container-width: 99.8125rem;
+  --container-padding-x: 0.875rem;
+  --section-padding-y: fluid(150, 80);
+  --transition-duration: .3s;
+}
+@media (width <= 90.06125rem) {
+  :root {
+    --container-width: 80rem;
+  }
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (width <= 47.99875rem) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+@media (width > 47.99875rem) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+html.is-locked {
+  overflow: hidden;
+}
+
+body {
+  font-size: clamp(0.875rem, 0.7944214876rem + 0.3305785124vw, 1.125rem);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-base);
+  font-weight: 400;
+  color: var(--gray-color-60);
+  background-color: var(--dark-color);
+  line-height: 1.5;
+}
+
+main {
+  flex-grow: 1;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: var(--light-color);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  font-family: var(--font-accent);
+  font-weight: 700;
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: 500;
+}
+
+h1, .h1 {
+  font-size: clamp(1.75rem, 1.145661157rem + 2.479338843vw, 3.625rem);
+}
+
+h2, .h2 {
+  font-size: clamp(1.5rem, 1.0165289256rem + 1.9834710744vw, 3rem);
+}
+
+h3, .h3 {
+  font-size: clamp(1.5rem, 1.2179752066rem + 1.1570247934vw, 2.375rem);
+}
+
+h4, .h4 {
+  font-size: clamp(1.125rem, 1.0041322314rem + 0.4958677686vw, 1.5rem);
+}
+
+h5, .h5 {
+  font-size: clamp(1.125rem, 1.0444214876rem + 0.3305785124vw, 1.375rem);
+}
+
+h6, .h6 {
+  font-size: clamp(1rem, 0.9194214876rem + 0.3305785124vw, 1.25rem);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+}
+@media (any-hover: none) {
+  a:active {
+    color: var(--light-color);
+  }
+}
+@media (any-hover: hover) {
+  a:hover {
+    color: var(--light-color);
+  }
+}
+a[class] {
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 0.125rem dashed var(--light-color);
+  outline-offset: 0.125rem;
+}
+
+a[aria-label], button[aria-label] {
+  position: relative;
+}
+a[aria-label]::before, button[aria-label]::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 2.75rem;
+  height: 2.75rem;
+  content: "";
+}
+
+.logo {
+  max-width: clamp(7.25rem, 5.5578512397rem + 6.9421487603vw, 12.5rem);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: clamp(0.875rem, 0.5526859504rem + 1.3223140496vw, 1.875rem);
+       column-gap: clamp(0.875rem, 0.5526859504rem + 1.3223140496vw, 1.875rem);
+}
+.actions__btn {
+  --size: 2.125rem;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: var(--size);
+  height: var(--size);
+}
+@media (any-hover: none) {
+  .actions__btn:active {
+    opacity: 0.7;
+  }
+}
+@media (any-hover: hover) {
+  .actions__btn:hover {
+    opacity: 0.7;
+  }
+}
+@media (width <= 90.06125rem) {
+  .actions__btn {
+    --size: 1.5rem;
+  }
+}
+.actions__btn svg {
+  fill: transparent;
+  color: var(--light-color);
+}
+
+.header {
+  color: var(--grey-color-60);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.4375rem;
+  background-color: transparent;
+}
+.header-menu__list {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 3.375rem;
+       column-gap: 3.375rem;
+  padding: 0.625rem;
+  border: var(--border);
+  border-radius: 0.75rem;
+  background-color: var(--dark-color-6);
+}
+@media (width <= 90.06125rem) {
+  .header-menu__list {
+    -moz-column-gap: 2.25rem;
+         column-gap: 2.25rem;
+    padding: 0.5rem;
+  }
+}
+.header-menu__link {
+  padding: 0.875rem 1.5rem;
+}
+.header-menu__link.is-active {
+  background-color: var(--dark-color-10);
+  border-radius: 0.5rem;
+  color: var(--light-color);
+  pointer-events: none;
+}/*# sourceMappingURL=main.css.map */
