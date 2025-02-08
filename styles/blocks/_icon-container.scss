@@ -1,0 +1,15 @@
+@use '../tools' as *;
+
+.icon-container{
+    --size: #{rem(44)};
+
+    @include reset-btn;
+
+    @include square(var(--size));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-color-10);
+    border-radius: rem(6);
+}

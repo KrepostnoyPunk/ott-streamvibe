@@ -1,2 +1,47 @@
 @use '../tools' as *;
 
+.burger-btn{
+    border: 3px solid var(--dark-color-15);
+
+    @include hover{
+        opacity: .7;
+    }
+
+    &.is-active{
+        .burger-btn__line{
+            &:nth-child(1){
+                rotate: 45deg;
+                transform-origin: 0;
+                translate: 0.15em -0.1em;
+            }
+
+            &:nth-child(2){
+                rotate: -45deg;
+            }
+
+            &:nth-child(3){
+                width: 0;
+            }
+        }
+    }
+
+    &__lines-container{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: rem(12);
+        width: rem(18);
+    }
+
+    &__line{
+        width: 100%;
+        height: rem(1.5);
+        background-color: var(--light-color);
+        transition-duration: var(--transition-duration);
+
+        &:last-child{
+            width: 55%;
+            align-self: flex-end;
+        }
+    }
+}

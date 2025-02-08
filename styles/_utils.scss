@@ -13,15 +13,15 @@
 }
 
 // скрытие на мобилках, но видимость на других устройствах
-.mobile-hidden{
-    @include mobile{
+.tablet-s-hidden{
+    @include tablet-s{
         display: none !important;
     }
 }
 
 // видимость на мобилках, но скрытие на других устройствах
-.visible-mobile{
-    @include mobile-above{
+.visible-tablet-s{
+    @include tablet-s-above{
         display: none !important;
     }
 }

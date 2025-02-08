@@ -1,0 +1,38 @@
+@use '../tools' as *;
+
+.free-trial{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: rem(100) rem(80);
+    border: var(--border-thin);
+    border-radius: rem(12);
+    background:  linear-gradient(90deg, rgba(15, 15, 15, 1) 2%, rgba(20, 15, 15, .97) 16%, rgba(34, 14, 14, .91) 28%, rgb(229, 0, 0, .3) 100%), url('../../assets/images/free-trial-bg-img.png') right / cover no-repeat;
+    height: rem(344);
+
+    @include laptop{
+        height: rem(236);
+    }
+
+    @include tablet-s{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: rem(50);
+        height: rem(344);
+    }
+
+    &__info{
+        display: grid;
+        row-gap: rem(14);
+        
+        @include tablet-s{
+            text-align: center;
+        }
+    }
+
+    &__btn{
+        font-weight: 600;
+        padding-inline: rem(24);
+    }
+}

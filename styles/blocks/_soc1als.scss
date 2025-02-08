@@ -1,0 +1,21 @@
+@use '../tools' as *;
+
+.soc1als{
+    &__list{
+        display: flex;
+        column-gap: rem(14);
+
+        @include laptop{
+            column-gap: rem(10);
+        }
+    }
+
+    &__link{
+        color: var(--light-color);
+        border: var(--border-thin);
+
+        @include hover{
+            border-color: var(--light-color)
+        }
+    }
+}

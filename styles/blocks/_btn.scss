@@ -1,2 +1,16 @@
 @use '../tools' as *;
 
+.btn{
+    padding-block: rem(18);
+    background-color: var(--red-color);
+    max-height: rem(63);
+    color: var(--light-color);
+    border-radius: rem(8);
+    white-space: nowrap;
+    border: 2px solid transparent;
+
+    @include hover{
+        border-color: var(--red-color);
+        background-color: var(--dark-color-12);
+    }
+}

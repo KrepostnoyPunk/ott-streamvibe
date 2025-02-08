@@ -6,7 +6,16 @@
 
 
 @use './blocks/logo';
-@use './blocks/btn';
+@use './blocks/icon-container';
 @use './blocks/burger-btn';
 @use './blocks/actions';
 @use './blocks/header';
+
+@use './blocks/btn';
+
+@use './blocks/section';
+
+@use './blocks/free-trial';
+
+@use './blocks/soc1als';
+@use './blocks/footer';
