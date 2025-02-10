@@ -1,0 +1,19 @@
+@use '../tools' as *;
+
+.icon{
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(4);
+
+    &::before{
+
+        @include square(#{rem(24)});
+
+        content: '';
+        background: url('../../assets/icons/icon--play-btn.svg');
+        margin-right: rem(10);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

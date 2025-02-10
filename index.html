@@ -11,66 +11,98 @@
 <body>
     <!-- header -->
     <header class="header" data-js-header>
-        <div class="header-inner container">
-            <a href="./index.html" class="header-logo logo" title="Lead to NextGen homepage" aria-label="Lead to NextGen homepage">
-                <img src="./assets/icons/Logo.svg" alt="NextGen company logo" class="logo__img" width="200" height="60">
-            </a>
-            <div class="header__mobile-overlay" data-js-header-mobile-overlay>
-                <nav class="header-menu">
-                    <ul class="header-menu__list">
-                        <li class="header-menu__item">
-                            <a href="./index.html" class="header-menu__link is-active">
-                                Home
-                            </a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="./catalog.html" class="header-menu__link">
-                                Movies & Shows
-                            </a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="./support.html" class="header-menu__link">
-                                Support
-                            </a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="./subscriptions.html" class="header-menu__link">
-                                Subscriptions
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header__actions actions">
-                    <button class="actions__btn">
-                        <span class="actions__btn-wrapper">
-                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M29.75 29.75L22.388 22.388M22.388 22.388C24.3108 20.4653 25.5 17.809 25.5 14.875C25.5 9.00697 20.743 4.25 14.875 4.25C9.00697 4.25 4.25 9.00697 4.25 14.875C4.25 20.743 9.00697 25.5 14.875 25.5C17.809 25.5 20.4653 24.3108 22.388 22.388Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <button class="actions__btn">
-                        <span class="actions__btn-wrapper">
-                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21.0472 24.1991C23.7312 23.8807 26.3193 23.2497 28.7741 22.3435C26.7386 20.0841 25.4997 17.093 25.4997 13.8125V12.8197C25.4999 12.7965 25.5 12.7732 25.5 12.75C25.5 8.05558 21.6944 4.25 17 4.25C12.3056 4.25 8.5 8.05558 8.5 12.75L8.49972 13.8125C8.49972 17.093 7.2608 20.0841 5.22534 22.3435C7.68032 23.2498 10.2686 23.8808 12.9528 24.1992M21.0472 24.1991C19.72 24.3565 18.3693 24.4375 16.9997 24.4375C15.6303 24.4375 14.2798 24.3565 12.9528 24.1992M21.0472 24.1991C21.1789 24.6091 21.25 25.0462 21.25 25.5C21.25 27.8472 19.3472 29.75 17 29.75C14.6528 29.75 12.75 27.8472 12.75 25.5C12.75 25.0463 12.8211 24.6091 12.9528 24.1992" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
+        <div class="header__top">
+            <div class="header__menu-inner container">
+                <a href="./index.html" class="header-logo logo" title="Lead to NextGen homepage" aria-label="Lead to NextGen homepage">
+                    <img src="./assets/icons/Logo.svg" alt="NextGen company logo" class="logo__img" width="200" height="60">
+                </a>
+                <div class="header__mobile-overlay" data-js-header-mobile-overlay>
+                    <nav class="header-menu">
+                        <ul class="header-menu__list">
+                            <li class="header-menu__item">
+                                <a href="./index.html" class="header-menu__link is-active">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="./catalog.html" class="header-menu__link">
+                                    Movies & Shows
+                                </a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="./support.html" class="header-menu__link">
+                                    Support
+                                </a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="./subscriptions.html" class="header-menu__link">
+                                    Subscriptions
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__actions actions">
+                        <button class="actions__btn" aria-label="Open search">
+                            <span class="actions__btn-wrapper">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M29.75 29.75L22.388 22.388M22.388 22.388C24.3108 20.4653 25.5 17.809 25.5 14.875C25.5 9.00697 20.743 4.25 14.875 4.25C9.00697 4.25 4.25 9.00697 4.25 14.875C4.25 20.743 9.00697 25.5 14.875 25.5C17.809 25.5 20.4653 24.3108 22.388 22.388Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <button class="actions__btn" aria-label="Open notifications">
+                            <span class="actions__btn-wrapper">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.0472 24.1991C23.7312 23.8807 26.3193 23.2497 28.7741 22.3435C26.7386 20.0841 25.4997 17.093 25.4997 13.8125V12.8197C25.4999 12.7965 25.5 12.7732 25.5 12.75C25.5 8.05558 21.6944 4.25 17 4.25C12.3056 4.25 8.5 8.05558 8.5 12.75L8.49972 13.8125C8.49972 17.093 7.2608 20.0841 5.22534 22.3435C7.68032 23.2498 10.2686 23.8808 12.9528 24.1992M21.0472 24.1991C19.72 24.3565 18.3693 24.4375 16.9997 24.4375C15.6303 24.4375 14.2798 24.3565 12.9528 24.1992M21.0472 24.1991C21.1789 24.6091 21.25 25.0462 21.25 25.5C21.25 27.8472 19.3472 29.75 17 29.75C14.6528 29.75 12.75 27.8472 12.75 25.5C12.75 25.0463 12.8211 24.6091 12.9528 24.1992" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
                 </div>
+                <button class="header__burger-btn burger-btn icon-container visible-tablet-s" type="button" title="Open navigation menu" aria-label="Open navigation menu" data-js-header-burger-btn>
+                    <span class="burger-btn__lines-container">
+                        <span class="burger-btn__line"></span>
+                        <span class="burger-btn__line"></span>
+                        <span class="burger-btn__line"></span>
+                    </span>
+                </button>
             </div>
-            <button class="header__burger-btn burger-btn icon-container visible-tablet-s" type="button" title="Open navigation menu" aria-label="Open navigation menu" data-js-header-burger-btn>
-                <span class="burger-btn__lines-container">
-                    <span class="burger-btn__line"></span>
-                    <span class="burger-btn__line"></span>
-                    <span class="burger-btn__line"></span>
-                </span>
-            </button>
+        </div>
+        <div class="header__bottom hero">
+            <img src="./assets/images/home-abstract-design.svg" alt="" class="hero__img" width="470" height="470">
+            <div class="hero__body">
+                <div class="hero__info">
+                    <h1 class="hero__title">
+                        The Best Streaming Experience
+                    </h1>
+                    <div class="hero__description">
+                        <p>
+                            StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.
+                        </p>
+                    </div>
+                </div>
+                <button class="hero__btn btn" type="button">
+                    <span class="icon icon--play-btn-before">
+                        Start Watching Now
+                    </span>
+                </button>
+            </div>
         </div>
     </header>
     <!-- main -->
      <main class="main">
-        <!-- hero section -->
-        
+        <!-- genre-set section -->
+         <section class="section">
+            <header class="section__header">
 
+            </header>
+            <div class="section__body">
+                <div class="genre-set">
+                    <ul class="genre-set__list">
+
+                    </ul>
+                </div>
+            </div>
+         </section>
         <!-- free trial section -->
          <section class="section">
             <div class="section__body container">

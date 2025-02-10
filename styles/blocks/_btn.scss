@@ -8,9 +8,14 @@
     border-radius: rem(8);
     white-space: nowrap;
     border: 2px solid transparent;
+    font-weight: 600;
 
     @include hover{
         border-color: var(--red-color);
         background-color: var(--dark-color-12);
+    }
+
+    @include laptop{
+        padding-block: rem(15.5);
     }
 }

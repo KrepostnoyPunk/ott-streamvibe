@@ -1,0 +1,46 @@
+@use '../tools' as *;
+
+.hero{
+    &,
+    &__info,
+    &__body{
+        display: grid;
+        justify-items: center;
+    }
+
+    row-gap: fluid(131, 50);
+
+    &__img{
+        width: rem(470);
+        margin-top: fluid(195, 150);
+        opacity: .9;
+        fill: var(--light-color);
+
+        @include laptop{
+            width: rem(300);
+        }
+
+        @include mobile{
+            width: rem(200);
+        }
+    }
+
+    &__info{
+        row-gap: rem(14);
+        text-align: center;
+
+        @include laptop{
+            row-gap: rem(10);
+        }
+    }
+
+    &__body{
+        row-gap: fluid(50, 30);
+        width: fluid(1092, 390);
+        offset: rem(-135) 0;
+    }
+
+    &__btn{
+        padding-inline: rem(24);
+    }
+}
