@@ -17,6 +17,7 @@
         z-index: 999;
         color: var(--grey-color-60);
         width: 100%;
+        max-height: rem(120);
 
         animation-name: sticky-header-scroll;
         animation-fill-mode: both;

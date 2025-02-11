@@ -1,0 +1,98 @@
+@use '../tools' as *;
+
+.slider{
+    // display: flex;
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(16);
+        padding: rem(16);
+        border-radius: rem(12);
+        border: var(--border-thin);
+        background-color: var(--dark-color-6);
+
+        @include laptop{
+            padding: rem(12);
+        }
+    }
+
+    &__btn{
+        @include reset-btn;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem(14);
+        border: var(--border-thin);
+        border-radius: rem(12);
+        color: var(--light-color);
+        background-color: var(--dark-color-10);
+
+        @include hover{
+            border-color: var(--light-color);
+        }
+
+        @include laptop{
+            padding: rem(10);
+        }
+    }
+
+    &__slides-container{
+        display: flex;
+        column-gap: rem(3);
+        align-items: center;
+    }
+
+    &__page-mark{
+        @include reset-btn;
+
+        width: rem(16);
+        height: rem(4);
+        background-color: var(--dark-color-20);
+        border-radius: rem(6);
+
+        &.is-active{
+            width: rem(23);
+            background-color: var(--red-color);
+
+            @include laptop{
+                width: rem(18);
+            }
+        }
+
+        @include laptop{
+            width: rem(14);
+        }
+    }
+
+    &__mobile-slider-container{
+        display: flex;
+        align-items: center;
+        margin-inline: auto;
+    }
+
+    &__mobile-bar{
+        width: rem(220);
+        height: rem(5);
+        border-radius: rem(6);
+        background-color: var(--dark-color-20);
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: rem(6);
+            width: 25%;
+            height: 100%;
+            background-color: var(--red-color);
+        }
+
+        @include mobile-s{
+            width: rem(110);
+        }
+    }
+}
