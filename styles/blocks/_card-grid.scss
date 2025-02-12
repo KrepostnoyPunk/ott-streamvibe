@@ -1,11 +1,25 @@
 @use '../tools' as *;
 
 .card-grid{
-    --cols: 4;
+    --cols: 5;
+    --size: #{rem(294)};
 
     display: grid;
-    grid-template-columns: repeat(var(--cols), 1fr);
-    gap: rem(30);
+    grid-template-columns: repeat(var(--cols), var(--size));
+    grid-auto-flow: column;
+    column-gap: rem(30);
+    overflow: hidden;
+    
+
+    @include laptop{
+        --size: #{rem(240)};
+
+        column-gap: rem(20);
+    }
+
+    @include tablet{
+        --size: #{rem(200)};
+    }
 
     @include mobile{
         gap: rem(20);

@@ -17,9 +17,10 @@
 
 @use './blocks/section';
 
-@use './blocks/slider';
+@use './blocks/slider-controls';
 @use './blocks/card-grid';
-@use './blocks/genre-set';
+@use './blocks/genre-set-card';
+@use './blocks/slider';
 
 @use './blocks/free-trial';
 

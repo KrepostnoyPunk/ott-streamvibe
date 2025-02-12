@@ -1,28 +1,19 @@
 @use '../tools' as *;
 
-.genre-set{
-    display: grid;
-    row-gap: rem(24);
+.genre-set-card{
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(1.5);
+    padding: rem(30);
+    border: var(--border-thin);
+    border-radius: rem(12);
+    background-color: var(--dark-color-10);
+    color: var(--light-color);
+    min-height: rem(201);
+    min-width: rem(178);
 
-    &__list{
-        overflow-x: auto;
-    }
-
-    &__item{
-        display: flex;
-        flex-direction: column;
-        row-gap: rem(1.5);
-        padding: rem(30);
-        border: var(--border-thin);
-        border-radius: rem(12);
-        background-color: var(--dark-color-10);
-        color: var(--light-color);
-        min-height: rem(201);
-        min-width: rem(178);
-
-        @include mobile{
-            padding: rem(20);
-        }
+    @include mobile{
+        padding: rem(20);
     }
 
     &__img-grid{
