@@ -1,8 +1,6 @@
 @use '../tools' as *;
 
 .slider{
-    display: flex;
-    column-gap: rem(30);
 
     @include tablet-s{
         display: grid;
@@ -10,12 +8,20 @@
         overflow: scroll;
     }
 
-    &__list{
+    &__slides-wrapper{
+        display: flex;
+        overflow: hidden;
+        column-gap: rem(30);
         transition-duration: var(--transition-duration);
 
         @include tablet-s{
-            display: flex;
             overflow-x: scroll;
+        }
+    }
+
+    &__slide{
+        &:not(.is-active){
+            display: none;
         }
     }
 }

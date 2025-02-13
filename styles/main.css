@@ -772,29 +772,16 @@ a[aria-label]::before, button[aria-label]::before {
 
 .card-grid {
   --cols: 5;
-  --size: 18.375rem;
   display: grid;
-  grid-template-columns: repeat(var(--cols), var(--size));
+  grid-template-columns: repeat(var(--cols), 1fr);
   grid-auto-flow: column;
   -moz-column-gap: 1.875rem;
        column-gap: 1.875rem;
-  overflow: hidden;
 }
 @media (width <= 90.06125rem) {
   .card-grid {
-    --size: 15rem;
     -moz-column-gap: 1.25rem;
          column-gap: 1.25rem;
-  }
-}
-@media (width <= 63.99875rem) {
-  .card-grid {
-    --size: 12.5rem;
-  }
-}
-@media (width <= 47.99875rem) {
-  .card-grid {
-    gap: 1.25rem;
   }
 }
 
@@ -807,12 +794,21 @@ a[aria-label]::before, button[aria-label]::before {
   border-radius: 0.75rem;
   background-color: var(--dark-color-10);
   color: var(--light-color);
-  min-height: 12.5625rem;
-  min-width: 11.125rem;
+  min-height: 21.375rem;
+  min-width: 18.375rem;
+}
+@media (width <= 90.06125rem) {
+  .genre-set-card {
+    padding: 1.5rem;
+    min-height: 17.625rem;
+    min-width: 15rem;
+  }
 }
 @media (width <= 47.99875rem) {
   .genre-set-card {
     padding: 1.25rem;
+    min-height: 12.5625rem;
+    min-width: 11.125rem;
   }
 }
 .genre-set-card__img-grid {
@@ -853,11 +849,6 @@ a[aria-label]::before, button[aria-label]::before {
   }
 }
 
-.slider {
-  display: flex;
-  -moz-column-gap: 1.875rem;
-       column-gap: 1.875rem;
-}
 @media (width <= 55.68625rem) {
   .slider {
     display: grid;
@@ -865,14 +856,20 @@ a[aria-label]::before, button[aria-label]::before {
     overflow: scroll;
   }
 }
-.slider__list {
+.slider__slides-wrapper {
+  display: flex;
+  overflow: hidden;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
   transition-duration: var(--transition-duration);
 }
 @media (width <= 55.68625rem) {
-  .slider__list {
-    display: flex;
+  .slider__slides-wrapper {
     overflow-x: scroll;
   }
+}
+.slider__slide:not(.is-active) {
+  display: none;
 }
 
 .free-trial {
