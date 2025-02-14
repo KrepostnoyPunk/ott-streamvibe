@@ -9,18 +9,14 @@
     border-radius: rem(12);
     background-color: var(--dark-color-10);
     color: var(--light-color);
-    min-height: rem(342);
-    min-width: rem(294);
 
     @include laptop{
         padding: rem(24);
-        min-height: rem(282);
-        min-width: rem(240);
     }
 
     @include mobile{
         padding: rem(20);
-        min-height: rem(201);
+        max-height: rem(201);
         min-width: rem(178);
     }
 

@@ -73,6 +73,8 @@
     }
 
     &__mobile-bar{
+        --progressMarkWidth: 25%;
+
         width: rem(220);
         height: rem(5);
         border-radius: rem(6);
@@ -85,7 +87,7 @@
             top: 0;
             left: 0;
             border-radius: rem(6);
-            width: 25%;
+            width: var(--progressMarkWidth);
             height: 100%;
             background-color: var(--red-color);
         }

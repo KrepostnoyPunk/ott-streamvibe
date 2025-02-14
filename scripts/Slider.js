@@ -33,29 +33,56 @@ class Slider{
         this.bindEvents()
     }
 
-    UpdateSlide = (event) => {
-        if(this.currentSlide >= this.totalSlides){ // if currentSlide greater then totalSlides quantity
-            this.currentSlide = 0; // drop currentSlide to start
-        } else if (this.currentSlide < 0){
-            this.currentSlide = this.totalSlides - 1; // if currentSlide less then 0 let currentSlide be equal to last slide
-        }
-
-        // TODOOOO
+    updateSlide = (event) => {
         if(event.target.id === "prev-btn"){
-            this.currentSlide--;
-            this.slidesWrapperEl.style.transform = `translateX(+${this.slideItemEls[0].offsetWidth}px)`;
+            this.currentSlide--
         } else {
-            this.currentSlide++;
-            this.slidesWrapperEl.style.transform = `translateX(-${this.slideItemEls[0].offsetWidth}px)`;
+            this.currentSlide++
         }
 
-        console.log(this.currentSlide);
+        if (this.currentSlide < 0) {
+            this.currentSlide = this.totalSlides - 1; // if currentSlide less then 0 let currentSlide be equal to last slide of slides list
+        } else if (this.currentSlide >= this.totalSlides) { // if currentSlide greater then totalSlides quantity
+            this.currentSlide = 0; // drop currentSlide to start of slides list
+        }
+
+        this.showSlide(this.currentSlide);
+    }
+
+    showSlide(index){
+        this.slideItemEls.forEach(slideItem => {
+            slideItem.classList.remove(this.stateClasses.isActive)
+        })
+
+        this.pageMarkEls.forEach(pageMark => {
+            pageMark.classList.remove(this.stateClasses.isActive)
+        })
+
+        this.slideItemEls[index].classList.add(this.stateClasses.isActive)
+        this.pageMarkEls[index].classList.add(this.stateClasses.isActive)
+    }
+
+    updateProgressBar = () => {
+        
+
+        const currentScrollPosition = this.slidesWrapperEl.scrollLeft;
+        const maxScrollWidth = this.slidesWrapperEl.scrollWidth - this.slidesWrapperEl.clientWidth; // max scroll space - max client space
+
+        // this.slideItemEls.forEach(slideItem => {
+        //     if(currentScrollPosition >= this.slidesWrapperEl.style.width){
+        //         slideItem.classList.add(this.stateClasses.isActive)
+        //     }
+        // })
+
+        const progress = (currentScrollPosition / maxScrollWidth) * 100;
+        this.mobileProgressBarEl.style.setProperty("--progressMarkWidth", `${progress}%`)
     }
     
     bindEvents(){
         this.sliderControlsBtnEls.forEach(btn => {
-            btn.addEventListener("click", this.UpdateSlide)
+            btn.addEventListener("click", this.updateSlide)
         })
+        this.slidesWrapperEl.addEventListener("scroll", this.updateProgressBar)
     }
 }
 
