@@ -1,0 +1,22 @@
+@use '../tools' as *;
+
+.accordion-group{
+    counter-reset: custom-counter;
+    list-style-type: none;
+
+    &:last-child{
+        counter-reset: counter-continues 4;
+
+        .accordion-group__item{
+            counter-increment: calc(counter-continues + 1);
+        }
+
+        .accordion-cell__item::before{
+            content: "0" counter(counter-continues);
+        }
+    }
+    
+    &__item{
+        counter-increment: custom-counter;
+    }
+}

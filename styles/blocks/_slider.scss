@@ -15,11 +15,11 @@
 
         @include tablet-s{
             overflow-x: scroll;
+            column-gap: rem(20);
         }
     }
 
     &__slide{
-        min-width: 100%;
         transition: transform var(--transition-duration) ease-in-out;
 
         &:not(.is-active){

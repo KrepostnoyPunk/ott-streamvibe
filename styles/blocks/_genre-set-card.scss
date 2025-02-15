@@ -14,10 +14,13 @@
         padding: rem(24);
     }
 
-    @include mobile{
-        padding: rem(20);
+    @include tablet-s{
         max-height: rem(201);
         min-width: rem(178);
+    }
+
+    @include mobile{
+        padding: rem(20);
     }
 
     &__img-grid{

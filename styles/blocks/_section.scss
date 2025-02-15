@@ -1,7 +1,7 @@
 @use '../tools' as *;
 
 .section{
-    padding-block: var(--section-padding-y);
+    padding-bottom: var(--section-padding-bottom);
 
     &__header{
         display: flex;
@@ -9,10 +9,30 @@
         justify-content: space-between;
         column-gap: 1rem;
         padding-bottom: fluid(80, 40);
+
+        &:has(.slider-controls){
+            padding-top: fluid(200, 100);
+        }
+
+        @include mobile{
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: rem(20);
+            justify-items: start;
+        }
     }
 
     &__info{
         display: grid;
         row-gap: fluid(14, 6);
+    }
+
+    &__btn{
+        padding-inline: rem(24);
+        align-self: flex-end;
+
+        @include laptop{
+            padding-inline: rem(20);
+        }
     }
 }

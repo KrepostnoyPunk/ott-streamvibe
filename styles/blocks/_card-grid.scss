@@ -5,11 +5,22 @@
 
     display: grid;
     grid-template-columns: repeat(var(--cols), 1fr);
-    grid-auto-flow: column;
-    column-gap: rem(30);
+    gap: rem(30);
     
 
     @include laptop{
-        column-gap: rem(20);
+        gap: rem(20);
+    }
+
+    &--3cols{
+        --cols: 3;
+
+        @include tablet{
+            --cols: 2;
+        }
+
+        @include mobile{
+            --cols: 1;
+        }
     }
 }

@@ -1,0 +1,73 @@
+@use '../tools' as *;
+
+.accordion-cell{
+    padding: rem(30) rem(34);
+
+    &:not(:last-child){
+        border-bottom: 1px solid;
+        border-image: linear-gradient(90deg, rgba(229, 0, 0, 0) 0%, rgba(229, 0, 0, 1) 17%, rgba(229, 0, 0, 0) 100%) 1;
+    }
+
+    &__summary{
+        &::-webkit-details-marker{
+            display: none;
+        }
+
+        list-style-type: none;
+        color: var(--light-color)
+    }
+
+    &__title{
+        @include fluid-text(22, 20);
+
+        font-weight: 500;
+        transition-duration: var(--transition-duration);
+
+        &::before{
+            @include fluid-text(20, 16);
+
+            content: "0" counter(custom-counter);
+            background-color: var(--dark-color-12);
+            border: var(--border-thin);
+            padding: fluid(20, 12);
+            margin-right: rem(20);
+            border-radius: rem(10);
+            font-weight: 600;
+
+            @include laptop{
+                margin-right: rem(16);
+            }
+        }
+    }
+
+    // &__term{
+    //     position: relative;
+
+    //     ::before,
+    //     ::after{
+    //         @include abs-y;
+
+    //         content: '';
+    //         right: 0;
+    //         width: rem(20);
+    //         height: rem(2.5);
+    //         background-color: var(--light-color);
+    //     }
+    // }
+
+    &__content{
+        display: grid;
+        grid-template-rows: 0fr;
+        transition-duration: var(--transition-duration);
+
+        &-inner{
+            overflow: hidden;
+        }
+
+        &-body{
+            --offsetTop: #{fluid(20, 12)};
+
+            padding-top: var(--offsetTop);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@use '../tools' as *;
+
+.supported-devices-card{
+    display: grid;
+    row-gap: fluid(30, 20);
+
+    &__device{
+        display: flex;
+        column-gap: fluid(16, 10);
+        align-items: center;
+    }
+
+    &__icon-container{
+        --size: #{rem(72)};
+
+        @include square(var(--size));
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dark-color);
+        border: var(--border-thin);
+        border-radius: rem(12);
+        color: var(--red-color);
+
+        @include mobile{
+            --size: #{rem(44)};
+        }
+
+        svg{
+            --size: #{rem(40)};
+
+            @include square(var(--size));
+
+            @include mobile{
+                --size: #{rem(24)};
+            }
+        }
+    }
+}

@@ -23,5 +23,6 @@
 
     @include mobile{
         max-height: rem(52);
+        padding-block: rem(14);
     }
 }

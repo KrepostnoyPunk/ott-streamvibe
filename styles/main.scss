@@ -22,6 +22,13 @@
 @use './blocks/genre-set-card';
 @use './blocks/slider';
 
+@use './blocks/supported-devices-card';
+@use './blocks/tile';
+
+@use './blocks/accordion-cell';
+@use './blocks/accordion-group';
+@use './blocks/accordion';
+
 @use './blocks/free-trial';
 
 @use './blocks/soc1als';

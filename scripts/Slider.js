@@ -68,12 +68,6 @@ class Slider{
         const currentScrollPosition = this.slidesWrapperEl.scrollLeft;
         const maxScrollWidth = this.slidesWrapperEl.scrollWidth - this.slidesWrapperEl.clientWidth; // max scroll space - max client space
 
-        // this.slideItemEls.forEach(slideItem => {
-        //     if(currentScrollPosition >= this.slidesWrapperEl.style.width){
-        //         slideItem.classList.add(this.stateClasses.isActive)
-        //     }
-        // })
-
         const progress = (currentScrollPosition / maxScrollWidth) * 100;
         this.mobileProgressBarEl.style.setProperty("--progressMarkWidth", `${progress}%`)
     }
