@@ -1,0 +1,36 @@
+@use '../tools' as *;
+
+.plans-card{
+    display: grid;
+    row-gap: fluid(50, 30);
+
+    &__info{
+        display: grid;
+        row-gap: fluid(16, 10); 
+    }
+
+    &__title{
+        font-weight: 700;
+    }
+
+    &__accent-area{
+        @include fluid-text(40, 24);
+
+        color: var(--light-color);
+        font-weight: 600;
+    }
+
+    &__actions{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: fluid(20, 12);
+    }
+
+    &__btn{
+        padding-inline: fluid(35, 25.5);
+    }
+
+    &__accent-btn{
+        padding-inline: fluid(44, 32.5);
+    }
+}

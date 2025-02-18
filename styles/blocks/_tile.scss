@@ -1,10 +1,20 @@
 @use '../tools' as *;
 
 .tile{
-    padding: fluid(50, 24);
+    --paddingParams: #{rem(50)};
+
+    padding: var(--paddingParams);
     border-radius: rem(12);
     border: var(--border-thin);
     background-color: var(--dark-color-10);
+
+    @include laptop{
+        --paddingParams: #{rem(40)};
+    }
+
+    @include mobile{
+        --paddingParams: #{rem(24)};
+    }
 
     &--gradient{
         background-color: var(--dark-color-6);

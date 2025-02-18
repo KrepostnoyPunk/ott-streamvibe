@@ -3,9 +3,12 @@
 .accordion{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: rem(40);
+    
+    @include tablet-above{
+        column-gap: rem(40);
+    }
 
-    @include mobile{
+    @include tablet-s{
         grid-template-columns: 1fr;
     }
 }

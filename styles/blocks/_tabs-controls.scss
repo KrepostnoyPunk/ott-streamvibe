@@ -1,0 +1,35 @@
+@use '../tools' as *;
+
+.tabs-controls{
+    padding: rem(10);
+    border: var(--border-thin);
+    background-color: var(--dark-color-6);
+    border-radius: rem(10);
+
+    @include laptop{
+        padding: rem(8);
+    }
+
+    &__btn{
+        @include reset-btn;
+
+        padding: rem(14) rem(24);
+        color: var(--grey-color-60);
+        border-radius: rem(10);
+
+        @include laptop{
+            padding: rem(12) rem(20);
+        }
+
+        &.is-active{
+            color: var(--light-color);
+            background-color: var(--dark-color-12);
+            pointer-events: none;
+        }
+
+        @include hover{
+            background-color: var(--dark-color-12);
+            color: var(--red-color);
+        }
+    }
+}

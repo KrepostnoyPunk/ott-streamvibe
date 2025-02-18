@@ -1,11 +1,7 @@
 @use '../tools' as *;
 
 .accordion-cell{
-    display: flex;
-    column-gap: rem(20);
-    align-items: center; // while closed
     padding: rem(30) rem(34);
-    transition-duration: var(--transition-duration);
 
     &:not(:last-child){
         border-bottom: 1px solid;
@@ -16,21 +12,26 @@
         padding-inline: 0;
     }
 
-    &__counter-mark{
-        @include fluid-text(20, 16);
-
-        background-color: var(--dark-color-12);
-        border: var(--border-thin);
-        padding: fluid(20, 12);
-        border-radius: rem(10);
-        font-weight: 600;
-        color: var(--light-color);
+    &__inner{
+        padding: rem(20);
     }
 
     &__details{
         &[open]{
+
             .accordion-cell{
-                // align-items: start;
+                padding: rem(34);
+            }
+
+            .accordion-cell__title{
+                &::before,
+                &::after{
+                    background-color: var(--red-color);
+                }
+
+                &::after{
+                    rotate: 0deg;
+                }
             }
 
             & + .accordion-cell__content{
@@ -46,30 +47,29 @@
 
         list-style-type: none;
         color: var(--light-color);
+        position: relative;
+
+        &::before{
+            @include fluid-text(20, 16);
+
+            @include abs-y;
+
+            content: "0" counter(custom-counter);
+            background-color: var(--dark-color-12);
+            border: var(--border-thin);
+            padding: fluid(20, 12);
+            border-radius: rem(10);
+            font-weight: 600;
+            left: 0;
+
+            @include laptop{
+                margin-right: rem(16);
+            }
+        }
 
         @include hover{
             cursor: pointer;
         }
-
-        // position: relative;
-
-        // &::before,
-        // &::after{
-        //     @include abs-y;
-
-        //     content: "";
-        //     right: 0;
-        //     width: rem(20);
-        //     height: rem(2.5);
-        //     background-color: var(--light-color);
-        //     border-radius: 1rem;
-        //     transition-duration: var(--transition-duration);
-        //     padding-left: rem(20);
-        // }
-
-        // &::before{
-        //     rotate: 90deg;
-        // }
     }
 
     &__title{
@@ -77,12 +77,42 @@
 
         font-weight: 500;
         transition-duration: var(--transition-duration);
+        padding-left: rem(82);
+
+        @include hover{
+            color: var(--red-color);
+        }
+
+        @include mobile{
+            padding-left: rem(58);
+        }
+
+        &::before,
+        &::after{
+            @include abs-y;
+
+            content: '';
+            right: 0;
+            width: fluid(20, 15);
+            height: fluid(2.5, 2);
+            border-radius: rem(5);
+            background-color: var(--light-color);
+            transition-duration: var(--transition-duration);
+        }
+
+        &::after{
+            rotate: 90deg;
+        }
     }
 
     &__content{
         display: grid;
         grid-template-rows: 0fr;
         transition-duration: var(--transition-duration);
+        
+        @include mobile-above{
+            padding-left: rem(82);
+        }
 
         &-inner{
             overflow: hidden;
@@ -92,15 +122,10 @@
             --offsetTop: #{fluid(20, 12)};
 
             padding-top: var(--offsetTop);
+
+            @include mobile{
+                --offsetTop: #{rem(24.5)};
+            }
         }
-    }
-
-    &__state-mark{
-        @include reset-btn;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--light-color);
     }
 }

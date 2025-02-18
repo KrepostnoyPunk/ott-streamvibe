@@ -25,4 +25,10 @@
         max-height: rem(52);
         padding-block: rem(14);
     }
+
+    &--dark{
+        border: var(--border-thin);
+        border-radius: rem(8);
+        background-color: var(--dark-color);
+    }
 }
