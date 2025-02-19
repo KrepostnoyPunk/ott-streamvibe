@@ -1,6 +1,8 @@
 @use '../tools' as *;
 
 .tabs-controls{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     padding: rem(10);
     border: var(--border-thin);
     background-color: var(--dark-color-6);

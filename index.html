@@ -898,15 +898,15 @@
             <header class="section__header container">
                 <div class="section__info">
                     <h2 class="section__title h3">
-                        Frequently Asked Questions
+                        Choose the plan that's right for you
                     </h2>
                     <div class="section__description">
                         <p>
-                            Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe.
+                            Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!
                         </p>
                     </div>
                 </div>
-                <div class="section__tabs tabs-controls">
+                <div class="section__tabs-controls tabs-controls" data-js-tabs-controls>
                     <button class="tabs-controls__btn is-active" type="button" id="tab-1" role="tab" aria-controls="tabpanel-1" aria-selected="true" tabindex="0" data-js-tabs-btn>
                         Monthly
                     </button>
@@ -916,9 +916,9 @@
                 </div>
             </header>
             <div class="section__body">
-                <div class="tabs container">
-                    <div class="tabs__tab is-active card-grid card-grid--3cols">
-                        <div class="tile">
+                <div class="tabs container" data-js-tabs-root>
+                    <ul class="tabs__tab is-active card-grid card-grid--3cols" data-js-tabs-tab>
+                        <li class="tile">
                             <div class="plans-card">
                                 <div class="plans-card__info">
                                     <h4 class="plans-card__title">
@@ -947,8 +947,8 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tile">
+                        </li>
+                        <li class="tile">
                             <div class="plans-card">
                                 <div class="plans-card__info">
                                     <h4 class="plans-card__title">
@@ -977,8 +977,8 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tile">
+                        </li>
+                        <li class="tile">
                             <div class="plans-card">
                                 <div class="plans-card__info">
                                     <h4 class="plans-card__title">
@@ -1007,19 +1007,19 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="tabs__tab card-grid card-grid--3cols">
-                        <div class="tile">
+                        </li>
+                    </ul>
+                    <ul class="tabs__tab card-grid card-grid--3cols" data-js-tabs-tab>
+                        <li class="tile">
                             A
-                        </div>
-                        <div class="tile">
+                        </li>
+                        <li class="tile">
                             B
-                        </div>
-                        <div class="tile">
+                        </li>
+                        <li class="tile">
                             C
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>

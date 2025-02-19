@@ -563,6 +563,7 @@ a[aria-label]::before, button[aria-label]::before {
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-block: 1.125rem;
   background-color: var(--red-color);
   max-height: 3.9375rem;
@@ -1161,14 +1162,10 @@ a[aria-label]::before, button[aria-label]::before {
   -moz-column-gap: clamp(0.75rem, 0.5888429752rem + 0.6611570248vw, 1.25rem);
        column-gap: clamp(0.75rem, 0.5888429752rem + 0.6611570248vw, 1.25rem);
 }
-.plans-card__btn {
-  padding-inline: clamp(1.59375rem, 1.4023760331rem + 0.7851239669vw, 2.1875rem);
-}
-.plans-card__accent-btn {
-  padding-inline: clamp(2.03125rem, 1.7995867769rem + 0.9504132231vw, 2.75rem);
-}
 
 .tabs-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   padding: 0.625rem;
   border: var(--border-thin);
   background-color: var(--dark-color-6);
@@ -1210,6 +1207,11 @@ a[aria-label]::before, button[aria-label]::before {
   }
 }
 
+@media (width <= 63.99875rem) {
+  .tabs__tab {
+    grid-template-columns: repeat(auto-fit, 1fr);
+  }
+}
 .tabs__tab:not(.is-active) {
   display: none;
 }

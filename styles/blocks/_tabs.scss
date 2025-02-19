@@ -2,6 +2,11 @@
 
 .tabs{
     &__tab{
+        
+        @include tablet{
+            grid-template-columns: repeat(auto-fit, 1fr);
+        }
+
         &:not(.is-active){
             display: none;
         }

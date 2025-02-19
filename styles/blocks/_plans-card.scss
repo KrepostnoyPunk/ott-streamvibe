@@ -25,12 +25,4 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: fluid(20, 12);
     }
-
-    &__btn{
-        padding-inline: fluid(35, 25.5);
-    }
-
-    &__accent-btn{
-        padding-inline: fluid(44, 32.5);
-    }
 }
