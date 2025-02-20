@@ -8,11 +8,11 @@
         justify-items: center;
     }
 
-    row-gap: rem(131);
+    row-gap: fluid(131, 50);
 
     &__img{
         width: rem(470);
-        margin-top: fluid(195, 150);
+        margin-top: fluid(75, 48);
         opacity: .9;
         fill: var(--light-color);
 
@@ -37,7 +37,6 @@
     &__body{
         row-gap: fluid(50, 30);
         width: fluid(1092, 390);
-        offset: rem(-135) 0;
     }
 
     &__btn{

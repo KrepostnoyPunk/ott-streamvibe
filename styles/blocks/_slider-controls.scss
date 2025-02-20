@@ -17,6 +17,15 @@
         }
     }
 
+    &--transparent{
+        .slider-controls__inner{
+            border-radius: 0;
+            border: none;
+            background-color: transparent;
+            padding: 0
+        }
+    }
+
     &__btn{
         @include reset-btn;
 

@@ -12,4 +12,9 @@
     align-items: center;
     background-color: var(--dark-color-10);
     border-radius: rem(6);
+    border: var(--border-thin);
+
+    &--dark-bg{
+        background-color: var(--dark-color-6);
+    }
 }

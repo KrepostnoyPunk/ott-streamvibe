@@ -8,11 +8,15 @@
         linear-gradient(180deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), 
         linear-gradient(180deg, rgba(20, 20, 20, 0) 0%, rgb(20, 20, 20) 100%), 
         url('../../assets/images/home-hero-bg-img.png') center / cover no-repeat;
+
+    &--transparent{
+        background: transparent;
+    }
     
     &__top{
         display: flex;
         justify-content: center;
-        position: fixed;
+        position: sticky;
         top: 0;
         z-index: 999;
         color: var(--grey-color-60);

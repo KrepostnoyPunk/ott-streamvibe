@@ -1,0 +1,63 @@
+@use '../tools' as *;
+
+.hero-alt{
+    
+    &__inner{
+        margin-top: rem(50);
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        background: 
+            linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), 
+            url('../../assets/images/hero-alt-1.jpg');
+        min-height: fluid(835, 468);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: rem(50) rem(50) rem(20) rem(50);
+        border-radius: rem(12);
+    }
+
+    &__body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: rem(50);
+
+        @include laptop{
+            row-gap: rem(40);
+        }
+    }
+
+    &__info{
+        display: grid;
+        row-gap: rem(4);
+        text-align: center;
+    }
+
+    &__btn{
+        padding-inline: rem(24);
+    }
+
+    &__actions{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(20);
+    }
+
+    &__video-controls{
+        display: flex;
+        column-gap: rem(10);
+    }
+
+    &__video-controls-btn{
+        --size: #{rem(56)};
+
+        color: var(--light-color);
+
+        svg{
+            stroke: var(--light-color);
+        }
+    }
+}
