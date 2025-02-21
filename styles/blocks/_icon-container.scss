@@ -16,5 +16,11 @@
 
     &--dark-bg{
         background-color: var(--dark-color-6);
+        
+        @include square(fluid(56, 48));
+    }
+
+    @include hover{
+        border-color: var(--light-color);
     }
 }

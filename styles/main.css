@@ -384,6 +384,18 @@ a[aria-label]::before, button[aria-label]::before {
 }
 .icon-container--dark-bg {
   background-color: var(--dark-color-6);
+  width: clamp(3rem, 2.8388429752rem + 0.6611570248vw, 3.5rem);
+  height: clamp(3rem, 2.8388429752rem + 0.6611570248vw, 3.5rem);
+}
+@media (any-hover: none) {
+  .icon-container:active {
+    border-color: var(--light-color);
+  }
+}
+@media (any-hover: hover) {
+  .icon-container:hover {
+    border-color: var(--light-color);
+  }
 }
 
 .burger-btn {
@@ -899,6 +911,10 @@ a[aria-label]::before, button[aria-label]::before {
   }
 }
 
+.slider--hero .slider__slides-wrapper {
+  overflow-x: hidden;
+  flex-direction: column;
+}
 @media (width <= 55.68625rem) {
   .slider {
     display: grid;
@@ -1229,11 +1245,13 @@ a[aria-label]::before, button[aria-label]::before {
 }
 
 .hero-alt__inner {
+  --bgImg: url("../../assets/images/hero-alt-1.jpg");
   margin-top: 3.125rem;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), url("../../assets/images/hero-alt-1.jpg");
+  row-gap: 3.125rem;
+  background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), var(--bgImg);
   min-height: clamp(29.25rem, 21.8569214876rem + 30.3305785124vw, 52.1875rem);
   background-position: center;
   background-size: cover;
@@ -1241,15 +1259,30 @@ a[aria-label]::before, button[aria-label]::before {
   padding: 3.125rem 3.125rem 1.25rem 3.125rem;
   border-radius: 0.75rem;
 }
+.hero-alt__inner:nth-child(even) {
+  --bgImg: url("../../assets/images/hero-alt-2.jpg");
+}
+@media (width <= 90.06125rem) {
+  .hero-alt__inner {
+    padding-block: 1rem;
+    padding-inline: 2.5rem;
+    row-gap: 2.5rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero-alt__inner {
+    padding-inline: 1.5rem;
+  }
+}
 .hero-alt__body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  row-gap: 3.125rem;
+  row-gap: 1.875rem;
 }
 @media (width <= 90.06125rem) {
   .hero-alt__body {
-    row-gap: 2.5rem;
+    row-gap: 1.25rem;
   }
 }
 .hero-alt__info {
@@ -1257,8 +1290,18 @@ a[aria-label]::before, button[aria-label]::before {
   row-gap: 0.25rem;
   text-align: center;
 }
+@media (width <= 47.99875rem) {
+  .hero-alt__description {
+    display: none;
+  }
+}
 .hero-alt__btn {
   padding-inline: 1.5rem;
+}
+@media (width <= 47.99875rem) {
+  .hero-alt__btn {
+    width: 100%;
+  }
 }
 .hero-alt__actions {
   display: flex;
@@ -1267,17 +1310,21 @@ a[aria-label]::before, button[aria-label]::before {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
 }
+@media (width <= 47.99875rem) {
+  .hero-alt__actions {
+    display: contents;
+  }
+}
 .hero-alt__video-controls {
   display: flex;
   -moz-column-gap: 0.625rem;
        column-gap: 0.625rem;
 }
 .hero-alt__video-controls-btn {
-  --size: 3.5rem;
   color: var(--light-color);
 }
 .hero-alt__video-controls-btn svg {
-  stroke: var(--light-color);
+  fill: transparent;
 }
 
 .free-trial {

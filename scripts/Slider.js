@@ -63,7 +63,6 @@ class Slider{
     }
 
     updateProgressBar = () => {
-        
 
         const currentScrollPosition = this.slidesWrapperEl.scrollLeft;
         const maxScrollWidth = this.slidesWrapperEl.scrollWidth - this.slidesWrapperEl.clientWidth; // max scroll space - max client space
@@ -76,7 +75,15 @@ class Slider{
         this.sliderControlsBtnEls.forEach(btn => {
             btn.addEventListener("click", this.updateSlide)
         })
+
         this.slidesWrapperEl.addEventListener("scroll", this.updateProgressBar)
+
+        this.pageMarkEls.forEach((mark, index) => {
+            mark.addEventListener('click', () => {
+                this.currentSlide = index;
+                this.showSlide(this.currentSlide);
+            })
+        })
     }
 }
 

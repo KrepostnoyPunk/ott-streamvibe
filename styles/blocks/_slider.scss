@@ -2,6 +2,14 @@
 
 .slider{
 
+    &--hero{
+        .slider__slides-wrapper{
+         overflow-x: hidden;
+        //  display: initial;
+        flex-direction: column;
+        }
+     }
+
     @include tablet-s{
         display: grid;
         row-gap: rem(24);
