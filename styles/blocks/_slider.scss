@@ -3,10 +3,16 @@
 .slider{
 
     &--hero{
+
         .slider__slides-wrapper{
-         overflow-x: hidden;
-        //  display: initial;
-        flex-direction: column;
+            display: grid;
+            overflow: hidden;
+            grid-template-columns: 100%;
+            grid-auto-flow: column;
+
+            @include tablet-s{
+                overflow-x: hidden;
+            }
         }
      }
 
@@ -28,7 +34,7 @@
     }
 
     &__slide{
-        transition: transform var(--transition-duration) ease-in-out;
+        transition: transform .5s ease-in-out;
 
         &:not(.is-active){
             transform: translateX(-100%);

@@ -7,6 +7,8 @@ class Slider{
         slidesWrapper: '[data-js-slider-slides-wrapper]',
         slide: '[data-js-slider-slide]',
         mobileProgressBar: '[data-js-slider-mobile-progress-bar]',
+        heroAltInner: '[data-js-hero-alt-inner]',
+        heroBgImg: 'data-js-slide-bg-img',
     }
 
     stateClasses = {
@@ -25,10 +27,17 @@ class Slider{
         this.pageMarkEls = this.sliderControlsEl.querySelectorAll(this.selectors.pageMark);
         this.slidesWrapperEl = this.rootEl.querySelector(this.selectors.slidesWrapper);
         this.slideItemEls = this.rootEl.querySelectorAll(this.selectors.slide);
-        this.mobileProgressBarEl = this.rootEl.querySelector(this.selectors.mobileProgressBar)
+        this.mobileProgressBarEl = this.rootEl.querySelector(this.selectors.mobileProgressBar);
+        this.heroAltInnerEls = this.rootEl.querySelectorAll(this.selectors.heroAltInner);
 
         this.totalSlides = this.slideItemEls.length; // 4 but max === 3, b-se 0 === 1 by array rules
         this.currentSlide = 0; 
+
+        if(document.querySelector('.slider--hero')){
+            this.autoUpdate = setInterval(() => {
+                this.sliderControlsBtnEls[1].click()
+            }, 10000);
+        }
 
         this.bindEvents()
     }
@@ -59,7 +68,13 @@ class Slider{
         })
 
         this.slideItemEls[index].classList.add(this.stateClasses.isActive)
+
         this.pageMarkEls[index].classList.add(this.stateClasses.isActive)
+
+        const bgImg = this.slideItemEls[index].getAttribute(this.selectors.heroBgImg);
+        if(bgImg){
+            this.heroAltInnerEls[index].style.background  = `linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), url('${bgImg}') center / cover, no-repeat`;
+        }
     }
 
     updateProgressBar = () => {
@@ -76,7 +91,9 @@ class Slider{
             btn.addEventListener("click", this.updateSlide)
         })
 
-        this.slidesWrapperEl.addEventListener("scroll", this.updateProgressBar)
+        if(document.querySelector(this.selectors.mobileProgressBar)){
+            this.slidesWrapperEl.addEventListener("scroll", this.updateProgressBar)
+        }
 
         this.pageMarkEls.forEach((mark, index) => {
             mark.addEventListener('click', () => {

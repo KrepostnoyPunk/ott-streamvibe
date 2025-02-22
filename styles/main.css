@@ -730,11 +730,20 @@ a[aria-label]::before, button[aria-label]::before {
     padding: 0.75rem;
   }
 }
+@media (width <= 55.68625rem) {
+  .slider-controls__inner {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 .slider-controls--transparent .slider-controls__inner {
   border-radius: 0;
   border: none;
   background-color: transparent;
   padding: 0;
+}
+.slider-controls--transparent .slider-controls__btn {
+  background-color: var(--dark-color-6);
 }
 .slider-controls__btn {
   background-color: transparent;
@@ -912,8 +921,15 @@ a[aria-label]::before, button[aria-label]::before {
 }
 
 .slider--hero .slider__slides-wrapper {
-  overflow-x: hidden;
-  flex-direction: column;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 100%;
+  grid-auto-flow: column;
+}
+@media (width <= 55.68625rem) {
+  .slider--hero .slider__slides-wrapper {
+    overflow-x: hidden;
+  }
 }
 @media (width <= 55.68625rem) {
   .slider {
@@ -935,7 +951,7 @@ a[aria-label]::before, button[aria-label]::before {
   }
 }
 .slider__slide {
-  transition: transform var(--transition-duration) ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .slider__slide:not(.is-active) {
   transform: translateX(-100%);
@@ -1251,11 +1267,8 @@ a[aria-label]::before, button[aria-label]::before {
   flex-direction: column;
   justify-content: end;
   row-gap: 3.125rem;
-  background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), var(--bgImg);
+  background: linear-gradient(0deg, rgb(20, 20, 20) 0%, rgba(20, 20, 20, 0) 100%), var(--bgImg) center/cover, no-repeat;
   min-height: clamp(29.25rem, 21.8569214876rem + 30.3305785124vw, 52.1875rem);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 3.125rem 3.125rem 1.25rem 3.125rem;
   border-radius: 0.75rem;
 }
@@ -1297,6 +1310,7 @@ a[aria-label]::before, button[aria-label]::before {
 }
 .hero-alt__btn {
   padding-inline: 1.5rem;
+  max-width: 18.75rem;
 }
 @media (width <= 47.99875rem) {
   .hero-alt__btn {
