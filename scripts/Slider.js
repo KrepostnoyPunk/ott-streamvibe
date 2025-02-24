@@ -15,11 +15,6 @@ class Slider{
         isActive: 'is-active',
     }
 
-    // stateAttributes = {
-    //     ariaSelected: 'aria-selected',
-    //     tabIndex: 'tabindex',
-    // }
-
     constructor(){
         this.rootEl = document.querySelector(this.selectors.root);
         this.sliderControlsEl = document.querySelector(this.selectors.sliderControls);

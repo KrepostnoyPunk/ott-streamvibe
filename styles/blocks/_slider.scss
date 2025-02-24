@@ -9,10 +9,6 @@
             overflow: hidden;
             grid-template-columns: 100%;
             grid-auto-flow: column;
-
-            @include tablet-s{
-                overflow-x: hidden;
-            }
         }
      }
 
@@ -40,7 +36,11 @@
             transform: translateX(-100%);
             position: absolute;
             @include hide;
+        }
+    }
 
+    &:not(.slider--hero){
+        .slider__slide{
             @include tablet-s{
                 @include show;
                 transform: translateX(0);

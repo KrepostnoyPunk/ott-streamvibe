@@ -927,11 +927,6 @@ a[aria-label]::before, button[aria-label]::before {
   grid-auto-flow: column;
 }
 @media (width <= 55.68625rem) {
-  .slider--hero .slider__slides-wrapper {
-    overflow-x: hidden;
-  }
-}
-@media (width <= 55.68625rem) {
   .slider {
     display: grid;
     row-gap: 1.5rem;
@@ -960,7 +955,7 @@ a[aria-label]::before, button[aria-label]::before {
   visibility: hidden;
 }
 @media (width <= 55.68625rem) {
-  .slider__slide:not(.is-active) {
+  .slider:not(.slider--hero) .slider__slide {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
@@ -1339,6 +1334,22 @@ a[aria-label]::before, button[aria-label]::before {
 }
 .hero-alt__video-controls-btn svg {
   fill: transparent;
+}
+
+.compilation-section {
+  padding: 3.125rem;
+  border: var(--border-thin);
+  border-radius: 0.75rem;
+}
+.compilation-section__item {
+  display: grid;
+  row-gap: 3.125rem;
+}
+.compilation-section__item .section__header {
+  padding: 0;
+}
+.compilation-section__item:not(:last-child) {
+  padding-bottom: 6.25rem;
 }
 
 .free-trial {

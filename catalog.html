@@ -70,6 +70,7 @@
     </header>
     <!-- main -->
     <main class="main">
+        <!-- hero-alt -->
         <section class="section">
             <div class="hero-alt container">
                 <div class="slider slider--hero" data-js-slider-root>
@@ -243,10 +244,10 @@
                                 </svg>                            
                             </button>
                             <div class="slider-controls__page-marks-container">
-                                <button type="button"" class="slider-controls__page-mark is-active" data-js-slider-page-mark></button>
-                                <button type="button"" class="slider-controls__page-mark" data-js-slider-page-mark></button>
-                                <button type="button"" class="slider-controls__page-mark" data-js-slider-page-mark></button>
-                                <button type="button"" class="slider-controls__page-mark" data-js-slider-page-mark></button>
+                                <button type="button"" class="slider-controls__page-mark is-active" id="slide-1" role="slide" aria-controls="slide-1" aria-selected="true" tabindex="0" data-js-slider-page-mark></button>
+                                <button type="button"" class="slider-controls__page-mark" id="slide-2" role="slide" aria-controls="slide-2" aria-selected="false" tabindex="-1" data-js-slider-page-mark></button>
+                                <button type="button"" class="slider-controls__page-mark" id="slide-3" role="slide" aria-controls="slide-3" aria-selected="false" tabindex="-1"  data-js-slider-page-mark></button>
+                                <button type="button"" class="slider-controls__page-mark" id="slide-4" role="slide" aria-controls="slide-4" aria-selected="false" tabindex="-1"  data-js-slider-page-mark></button>
                             </div>
                             <button class="slider-controls__btn" id="next-btn" type="btn" data-js-slider-controls-btn>
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,6 +259,429 @@
                 </div>
             </div>
         </section>
+        <!-- compilation -->
+        <section class="section">
+            <div class="section__body">
+                <div class="tabs container" data-js-tabs-root>
+                    <div class="tabs__tab compilation is-active" data-js-tabs-tab>
+                        <ul class="compilation-section">
+                            <li class="compilation-section__item">
+                                <header class="section__header">
+                                    <div class="section__info">
+                                        <h2 class="section__title h3">
+                                            Our Genres
+                                        </h2>
+                                    </div>
+                                    <div class="section__slider-controls slider-controls" data-js-slider-controls>
+                                        <div class="slider-controls__inner tablet-s-hidden">
+                                            <button class="slider-controls__btn" id="prev-btn" type="btn" data-js-slider-controls-btn>
+                                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M22.75 14L5.25 14M5.25 14L13.125 21.875M5.25 14L13.125 6.125" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>                            
+                                            </button>
+                                            <div class="slider-controls__page-marks-container">
+                                                <button type="button"" class="slider-controls__page-mark is-active" data-js-slider-page-mark></button>
+                                                <button type="button"" class="slider-controls__page-mark" data-js-slider-page-mark></button>
+                                                <button type="button"" class="slider-controls__page-mark" data-js-slider-page-mark></button>
+                                                <button type="button"" class="slider-controls__page-mark" data-js-slider-page-mark></button>
+                                            </div>
+                                            <button class="slider-controls__btn" id="next-btn" type="btn" data-js-slider-controls-btn>
+                                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15.75 5.25L24.5 14M24.5 14L15.75 22.75M24.5 14H3.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </header>
+                                <div class="slider" data-js-slider-root>
+                                    <div class="slider__slides-wrapper" data-js-slider-slides-wrapper>
+                                        <div class="slider__slide is-active" data-js-slider-slide>
+                                            <ul class="slider__list card-grid">
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slider__slide" data-js-slider-slide>
+                                            <ul class="slider__list card-grid">
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slider__slide" data-js-slider-slide>
+                                            <ul class="slider__list card-grid">
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="slider__slide" data-js-slider-slide>
+                                            <ul class="slider__list card-grid">
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="slider__item genre-set-card">
+                                                    <div class="genre-set-card__img-grid">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                        <img src="./assets/images/genre-set-card-img-2.png" alt="" width="115" height="123" class="genre-set-card__img">
+                                                    </div>
+                                                    <div class="genre-set-card__actions">
+                                                        <a href="/" class="genre-set-card__redirect-link">
+                                                            <p class="genre-set-card__genre-name">
+                                                                Action
+                                                            </p>
+                                                            <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.02502 15L24.775 15M24.775 15L16.3375 6.5625M24.775 15L16.3375 23.4375" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="slider-controls__mobile-controls-container visible-tablet-s">
+                                        <span class="slider-controls__mobile-bar" data-js-slider-mobile-progress-bar></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </section>
     </main>
      <!-- footer -->
       <footer class="footer">
