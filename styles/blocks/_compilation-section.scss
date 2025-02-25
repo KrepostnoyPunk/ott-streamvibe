@@ -1,9 +1,13 @@
 @use '../tools' as *;
 
 .compilation-section{
-    padding: rem(50);
-    border: var(--border-thin);
     border-radius: rem(12);
+    position: relative;
+
+    @include tablet-above{
+        border: var(--border-thin);
+        padding: fluid(50, 40);
+    }
 
     &__item{
         .section__header{
@@ -11,10 +15,10 @@
         }
 
         display: grid;
-        row-gap: rem(50);
+        row-gap: fluid(50, 20);
         
         &:not(:last-child){
-            padding-bottom: rem(100);
+            padding-bottom: fluid(100, 50);
         }
     }
 }

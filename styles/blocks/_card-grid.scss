@@ -11,6 +11,10 @@
         gap: rem(20);
     }
 
+    &--4cols{
+        --cols: 4;
+    }
+
     &--3cols{
         --cols: 3;
 

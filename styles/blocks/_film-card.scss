@@ -1,0 +1,56 @@
+@use '../tools' as *;
+
+.film-card{
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+    padding: rem(20);
+    border: var(--border-thin);
+    border-radius: rem(12);
+    background-color: var(--dark-color-10);
+    color: var(--light-color);
+
+    @include laptop{
+        padding: rem(16);
+    }
+
+    // @include tablet-s{
+    //     max-height: rem(201);
+    //     min-width: rem(178);
+    // }
+
+    @include mobile{
+        padding: rem(12);
+        row-gap: rem(12);
+    }
+
+    &__info{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__tile{
+        display: flex;
+        align-items: center;
+        column-gap: rem(4);
+        background-color: var(--dark-color);
+        border: var(--border-thin);
+        border-radius: rem(51);
+        padding: rem(6) rem(10) rem(6) rem(6);
+        color: var(--grey-color-60);
+        white-space: nowrap;
+
+        @include fluid-text(16, 14);
+
+        svg{
+            --size: #{rem(24)};
+
+            @include square(var(--size));
+
+            @include laptop{
+                --size: #{rem(20)};
+            }
+        }
+    }
+}

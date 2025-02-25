@@ -230,6 +230,18 @@ svg * {
   overflow: hidden !important;
 }
 
+@media (width <= 63.99875rem) {
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
+@media (width > 63.99875rem) {
+  .visible-tablet {
+    display: none !important;
+  }
+}
+
 @media (width <= 55.68625rem) {
   .tablet-s-hidden {
     display: none !important;
@@ -681,6 +693,11 @@ a[aria-label]::before, button[aria-label]::before {
 .section {
   padding-bottom: var(--section-padding-bottom);
 }
+@media (width <= 47.99875rem) {
+  .section:has(.hero-alt) {
+    padding-bottom: 0;
+  }
+}
 .section__header {
   display: flex;
   align-items: center;
@@ -842,6 +859,9 @@ a[aria-label]::before, button[aria-label]::before {
     gap: 1.25rem;
   }
 }
+.card-grid--4cols {
+  --cols: 4;
+}
 .card-grid--3cols {
   --cols: 3;
 }
@@ -908,6 +928,7 @@ a[aria-label]::before, button[aria-label]::before {
   align-items: center;
   justify-content: space-between;
   font-weight: 600;
+  position: relative;
 }
 @media (any-hover: none) {
   .genre-set-card__redirect-link:active {
@@ -947,6 +968,12 @@ a[aria-label]::before, button[aria-label]::before {
 }
 .slider__slide {
   transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+@media (width <= 55.68625rem) {
+  .slider__slide {
+    width: auto;
+  }
 }
 .slider__slide:not(.is-active) {
   transform: translateX(-100%);
@@ -1215,6 +1242,9 @@ a[aria-label]::before, button[aria-label]::before {
     padding: 0.5rem;
   }
 }
+.tabs-controls--catalog {
+  margin-bottom: clamp(3.125rem, 2.117768595rem + 4.132231405vw, 6.25rem);
+}
 .tabs-controls__btn {
   background-color: transparent;
   border: none;
@@ -1336,20 +1366,102 @@ a[aria-label]::before, button[aria-label]::before {
   fill: transparent;
 }
 
-.compilation-section {
-  padding: 3.125rem;
+.compilation-title {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: 3.125rem;
+  top: -1.875rem;
+  background-color: var(--red-color);
+  padding: 0.625rem 1.5rem;
+}
+@media (width <= 90.06125rem) {
+  .compilation-title {
+    padding: 0.5rem 1.25rem;
+    left: 2.5rem;
+    top: -1.75rem;
+  }
+}
+.compilation-title--genre-card {
+  font-size: clamp(0.875rem, 0.8347107438rem + 0.1652892562vw, 1rem);
+  top: clamp(-1.875rem, -1.673553719rem + -0.826446281vw, -2.5rem);
+  left: 0;
+  padding: 0.625rem;
+  max-height: clamp(1.5625rem, 1.4214876033rem + 0.5785123967vw, 2rem);
+}
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  padding: 1.25rem;
   border: var(--border-thin);
   border-radius: 0.75rem;
+  background-color: var(--dark-color-10);
+  color: var(--light-color);
+}
+@media (width <= 90.06125rem) {
+  .film-card {
+    padding: 1rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .film-card {
+    padding: 0.75rem;
+    row-gap: 0.75rem;
+  }
+}
+.film-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.film-card__tile {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+  background-color: var(--dark-color);
+  border: var(--border-thin);
+  border-radius: 3.1875rem;
+  padding: 0.375rem 0.625rem 0.375rem 0.375rem;
+  color: var(--grey-color-60);
+  white-space: nowrap;
+  font-size: clamp(0.875rem, 0.8347107438rem + 0.1652892562vw, 1rem);
+}
+.film-card__tile svg {
+  --size: 1.5rem;
+  width: var(--size);
+  height: var(--size);
+}
+@media (width <= 90.06125rem) {
+  .film-card__tile svg {
+    --size: 1.25rem;
+  }
+}
+
+.compilation-section {
+  border-radius: 0.75rem;
+  position: relative;
+}
+@media (width > 63.99875rem) {
+  .compilation-section {
+    border: var(--border-thin);
+    padding: clamp(2.5rem, 2.298553719rem + 0.826446281vw, 3.125rem);
+  }
 }
 .compilation-section__item {
   display: grid;
-  row-gap: 3.125rem;
+  row-gap: clamp(1.25rem, 0.645661157rem + 2.479338843vw, 3.125rem);
 }
 .compilation-section__item .section__header {
   padding: 0;
 }
 .compilation-section__item:not(:last-child) {
-  padding-bottom: 6.25rem;
+  padding-bottom: clamp(3.125rem, 2.117768595rem + 4.132231405vw, 6.25rem);
 }
 
 .free-trial {

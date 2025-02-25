@@ -31,6 +31,11 @@
 
     &__slide{
         transition: transform .5s ease-in-out;
+        width: 100%;
+
+        @include tablet-s{
+            width: auto;
+        }
 
         &:not(.is-active){
             transform: translateX(-100%);
