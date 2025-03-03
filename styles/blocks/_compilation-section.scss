@@ -2,11 +2,15 @@
 
 .compilation-section{
     border-radius: rem(12);
-    position: relative;
 
     @include tablet-above{
+        position: relative;
         border: var(--border-thin);
-        padding: fluid(50, 40);
+        padding: rem(50);
+
+        @include laptop{
+            padding: rem(40);
+        }
     }
 
     &__item{

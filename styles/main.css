@@ -932,12 +932,12 @@ a[aria-label]::before, button[aria-label]::before {
 }
 @media (any-hover: none) {
   .genre-set-card__redirect-link:active {
-    color: var(--red-color);
+    opacity: 0.55;
   }
 }
 @media (any-hover: hover) {
   .genre-set-card__redirect-link:hover {
-    color: var(--red-color);
+    opacity: 0.55;
   }
 }
 
@@ -1403,7 +1403,6 @@ a[aria-label]::before, button[aria-label]::before {
   border-radius: 0.75rem;
   background-color: var(--dark-color-10);
   color: var(--light-color);
-  width: 100%;
 }
 @media (width <= 90.06125rem) {
   .film-card {
@@ -1417,6 +1416,8 @@ a[aria-label]::before, button[aria-label]::before {
   }
 }
 .film-card__img {
+  width: 100%;
+  height: 100%;
   border-radius: 0.75rem;
 }
 .film-card__info {
@@ -1428,17 +1429,28 @@ a[aria-label]::before, button[aria-label]::before {
        column-gap: 0.25rem;
 }
 .film-card__tile {
+  font-size: clamp(0.75rem, 0.6694214876rem + 0.3305785124vw, 1rem);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   -moz-column-gap: 0.25rem;
        column-gap: 0.25rem;
   background-color: var(--dark-color);
   border: var(--border-thin);
   border-radius: 3.1875rem;
-  padding: 0.375rem;
   color: var(--grey-color-60);
-  white-space: nowrap;
-  font-size: clamp(0.875rem, 0.8347107438rem + 0.1652892562vw, 1rem);
+}
+@media (width <= 55.68625rem) {
+  .film-card__tile {
+    white-space: nowrap;
+    padding: 0.375rem;
+  }
+}
+.film-card__tile--wide {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.625rem;
 }
 .film-card__tile svg {
   --size: 1.5rem;
@@ -1453,12 +1465,17 @@ a[aria-label]::before, button[aria-label]::before {
 
 .compilation-section {
   border-radius: 0.75rem;
-  position: relative;
 }
 @media (width > 63.99875rem) {
   .compilation-section {
+    position: relative;
     border: var(--border-thin);
-    padding: clamp(2.5rem, 2.298553719rem + 0.826446281vw, 3.125rem);
+    padding: 3.125rem;
+  }
+}
+@media (width > 63.99875rem) and (width <= 90.06125rem) {
+  .compilation-section {
+    padding: 2.5rem;
   }
 }
 .compilation-section__item {

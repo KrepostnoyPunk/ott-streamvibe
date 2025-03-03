@@ -56,7 +56,7 @@
         position: relative;
 
         @include hover{
-            color: var(--red-color);
+            opacity: .55;
         }
     }
 }
