@@ -1,8 +1,8 @@
 import Header from './Header.js';
-import Slider from "./Slider.js";
+import SliderCollection from "./Slider.js";
 import TabsCollection from "./Tabs.js";
 
 
 new Header()
-new Slider()
+new SliderCollection()
 new TabsCollection()

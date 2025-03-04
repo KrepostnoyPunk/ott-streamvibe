@@ -1,0 +1,7 @@
+@use '../tools' as *;
+
+.compilation{
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(120, 50);
+}

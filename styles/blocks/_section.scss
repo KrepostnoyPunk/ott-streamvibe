@@ -4,7 +4,7 @@
     padding-bottom: var(--section-padding-bottom);
 
     &:has(.hero-alt){
-        @include mobile{
+        @include tablet-s{
             padding-bottom: 0;
         }
     }

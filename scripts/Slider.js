@@ -1,6 +1,8 @@
+const rootSelector = '[data-js-slider-root]'; // global initialization to separate different groups of tabs so they won't trigger at the same time
+
 class Slider{
     selectors = {  
-        root:  '[data-js-slider-root]',
+        root:  rootSelector,
         sliderControls: '[data-js-slider-controls]',
         sliderControlsBtn: '[data-js-slider-controls-btn]',
         pageMark: '[data-js-slider-page-mark]',
@@ -15,8 +17,8 @@ class Slider{
         isActive: 'is-active',
     }
 
-    constructor(){
-        this.rootEl = document.querySelector(this.selectors.root);
+    constructor(rootEl){
+        this.rootEl = rootEl;
         this.sliderControlsEl = document.querySelector(this.selectors.sliderControls);
         this.sliderControlsBtnEls = this.sliderControlsEl.querySelectorAll(this.selectors.sliderControlsBtn);
         this.pageMarkEls = this.sliderControlsEl.querySelectorAll(this.selectors.pageMark);
@@ -99,4 +101,16 @@ class Slider{
     }
 }
 
-export default Slider
+class SliderCollection{
+    constructor(){
+        this.init()
+    }
+
+    init(){
+        document.querySelectorAll(rootSelector).forEach((sliderGroup) => { // for each group of tabs initialize it's individual class with all functionality
+            new Slider(sliderGroup)
+        })
+    }
+}
+
+export default SliderCollection

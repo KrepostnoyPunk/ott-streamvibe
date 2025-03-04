@@ -1,0 +1,21 @@
+@use '../tools' as *;
+
+.rating{
+    display: inline-flex;
+    column-gap: rem(2);
+    align-items: center;
+    justify-content: center;
+
+    &__star{
+        --starImg: url('/assets/icons/star.svg');
+        --starSize: #{rem(18)};
+
+        @include square(var(--starSize));
+
+        background: var(--starImg) center / contain no-repeat;
+
+        &.is-active{
+            --starImg: url('/assets/icons/star--active.svg');
+        }
+    }
+}

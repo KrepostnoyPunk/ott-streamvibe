@@ -693,7 +693,7 @@ a[aria-label]::before, button[aria-label]::before {
 .section {
   padding-bottom: var(--section-padding-bottom);
 }
-@media (width <= 47.99875rem) {
+@media (width <= 55.68625rem) {
   .section:has(.hero-alt) {
     padding-bottom: 0;
   }
@@ -1242,9 +1242,6 @@ a[aria-label]::before, button[aria-label]::before {
     padding: 0.5rem;
   }
 }
-.tabs-controls--catalog {
-  margin-bottom: clamp(3.125rem, 2.117768595rem + 4.132231405vw, 6.25rem);
-}
 .tabs-controls__btn {
   background-color: transparent;
   border: none;
@@ -1393,6 +1390,24 @@ a[aria-label]::before, button[aria-label]::before {
   max-height: clamp(1.5625rem, 1.4214876033rem + 0.5785123967vw, 2rem);
 }
 
+.rating {
+  display: inline-flex;
+  -moz-column-gap: 0.125rem;
+       column-gap: 0.125rem;
+  align-items: center;
+  justify-content: center;
+}
+.rating__star {
+  --starImg: url("/assets/icons/star.svg");
+  --starSize: 1.125rem;
+  width: var(--starSize);
+  height: var(--starSize);
+  background: var(--starImg) center/contain no-repeat;
+}
+.rating__star.is-active {
+  --starImg: url("/assets/icons/star--active.svg");
+}
+
 .film-card {
   display: flex;
   flex-direction: column;
@@ -1487,6 +1502,12 @@ a[aria-label]::before, button[aria-label]::before {
 }
 .compilation-section__item:not(:last-child) {
   padding-bottom: clamp(3.125rem, 2.117768595rem + 4.132231405vw, 6.25rem);
+}
+
+.compilation {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(3.125rem, 1.7148760331rem + 5.7851239669vw, 7.5rem);
 }
 
 .free-trial {

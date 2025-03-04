@@ -12,10 +12,6 @@
         padding: rem(8);
     }
 
-    &--catalog{
-        margin-bottom: fluid(100, 50);
-    }
-
     &__btn{
         @include reset-btn;
 
