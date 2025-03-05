@@ -19,7 +19,8 @@ class Slider{
 
     constructor(rootEl){
         this.rootEl = rootEl;
-        this.sliderControlsEl = document.querySelector(this.selectors.sliderControls);
+        this.sliderId = this.rootEl.getAttribute("data-js-slider-root"); // unique slider id
+        this.sliderControlsEl = document.querySelector(`${this.selectors.sliderControls}[data-js-slider-controls="${this.sliderId}"]`); // certain controls group dependant on slider id
         this.sliderControlsBtnEls = this.sliderControlsEl.querySelectorAll(this.selectors.sliderControlsBtn);
         this.pageMarkEls = this.sliderControlsEl.querySelectorAll(this.selectors.pageMark);
         this.slidesWrapperEl = this.rootEl.querySelector(this.selectors.slidesWrapper);
@@ -30,9 +31,9 @@ class Slider{
         this.totalSlides = this.slideItemEls.length; // 4 but max === 3, b-se 0 === 1 by array rules
         this.currentSlide = 0; 
 
-        if(document.querySelector('.slider--hero')){
+        if(this.rootEl.classList.contains('slider--hero')){
             this.autoUpdate = setInterval(() => {
-                this.sliderControlsBtnEls[1].click()
+                this.sliderControlsBtnEls[1].click();
             }, 10000);
         }
 

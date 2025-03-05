@@ -13,6 +13,13 @@
 
     &--4cols{
         --cols: 4;
+
+        .genre-set-card{
+            @include mobile-s{
+                min-height: rem(268);
+                min-width: rem(231);
+            }
+        }
     }
 
     &--3cols{
