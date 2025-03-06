@@ -30,6 +30,7 @@
 
         @keyframes sticky-header-scroll {
             100% {
+                position: fixed;
                 background-color: var(--dark-color-6);
                 box-shadow: 0 0 1rem 0 var(--red-color);
             }

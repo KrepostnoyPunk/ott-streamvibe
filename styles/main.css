@@ -513,6 +513,7 @@ a[aria-label]::before, button[aria-label]::before {
 }
 @keyframes sticky-header-scroll {
   100% {
+    position: fixed;
     background-color: var(--dark-color-6);
     box-shadow: 0 0 1rem 0 var(--red-color);
   }
@@ -1421,10 +1422,6 @@ a[aria-label]::before, button[aria-label]::before {
 }
 
 .film-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 1.25rem;
   padding: 1.25rem;
   border: var(--border-thin);
   border-radius: 0.75rem;
@@ -1439,6 +1436,26 @@ a[aria-label]::before, button[aria-label]::before {
 @media (width <= 47.99875rem) {
   .film-card {
     padding: 0.75rem;
+  }
+}
+.film-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.25rem;
+}
+@media (any-hover: none) {
+  .film-card__inner:active {
+    opacity: 0.7;
+  }
+}
+@media (any-hover: hover) {
+  .film-card__inner:hover {
+    opacity: 0.7;
+  }
+}
+@media (width <= 47.99875rem) {
+  .film-card__inner {
     row-gap: 0.75rem;
   }
 }

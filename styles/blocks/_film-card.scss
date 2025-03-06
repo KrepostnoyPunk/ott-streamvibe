@@ -1,10 +1,6 @@
 @use '../tools' as *;
 
 .film-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: rem(20);
     padding: rem(20);
     border: var(--border-thin);
     border-radius: rem(12);
@@ -17,7 +13,21 @@
 
     @include mobile{
         padding: rem(12);
-        row-gap: rem(12);
+    }
+
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(20);
+
+        @include hover{
+            opacity: .7;
+        }
+
+        @include mobile{
+            row-gap: rem(12);
+        }
     }
 
     &__img{
