@@ -18,4 +18,8 @@
             --starImg: url('/assets/icons/star--active.svg');
         }
     }
+
+    &__value{
+        margin-left: rem(4);
+    }
 }

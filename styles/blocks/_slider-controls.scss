@@ -34,6 +34,53 @@
         }
     }
 
+    &--movie-open{
+        .slider-controls__inner{
+            border-radius: 0;
+            border: none;
+            background-color: transparent;
+            padding: 0
+        }
+
+        .slider-controls__btn{
+            --size: #{rem(52)};
+
+            @include square(var(--size));
+
+            border-radius: rem(100);
+            background-color: var(--dark-color);
+            color: var(--grey-color-60);
+
+            @include laptop{
+                --size: #{rem(44)};
+            }
+        }
+    }
+
+    &--review{
+        .slider-controls__inner{
+            border-radius: 0;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .slider-controls__btn{
+            --size: #{rem(52)};
+
+            @include square(var(--size));
+
+            border-radius: rem(100);
+            background-color: var(--dark-color);
+            color: var(--grey-color-60);
+
+            @include laptop{
+                --size: #{rem(44)};
+            }
+        }
+    }
+
     &__btn{
         @include reset-btn;
 

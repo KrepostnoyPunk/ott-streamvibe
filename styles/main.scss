@@ -41,6 +41,11 @@
 @use './blocks/compilation-section';
 @use './blocks/compilation';
 
+@use './blocks/additional-info';
+@use './blocks/review-card';
+@use './blocks/cast';
+@use './blocks/movie-open';
+
 @use './blocks/free-trial';
 
 @use './blocks/soc1als';

@@ -1,19 +1,40 @@
 @use '../tools' as *;
 
 .icon{
+    --iconImg: url('../../assets/icons/icon--play-btn.svg');
+
     display: inline-flex;
     align-items: center;
     column-gap: rem(4);
 
     &::before{
-
         @include square(#{rem(24)});
 
         content: '';
-        background: url('../../assets/icons/icon--play-btn.svg');
+        background: var(--iconImg);
         margin-right: rem(10);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    &--plus-sign-before{
+        --iconImg: url('../../assets/icons/icon--plus-sign.svg');
+    }
+
+    &--calendar-before{
+        --iconImg: url('../../assets/icons/icon--calendar.svg');
+    }
+
+    &--languages-before{
+        --iconImg: url('../../assets/icons/icon--languages.svg');
+    }
+
+    &--star-before{
+        --iconImg: url('../../assets/icons/icon--star.svg');
+    }
+
+    &--genres-before{
+        --iconImg: url('../../assets/icons/icon--genres.svg');
     }
 }

@@ -67,7 +67,9 @@ class Slider{
 
         this.slideItemEls[index].classList.add(this.stateClasses.isActive)
 
-        this.pageMarkEls[index].classList.add(this.stateClasses.isActive)
+        if(document.querySelector(this.selectors.pageMark)){
+            this.pageMarkEls[index].classList.add(this.stateClasses.isActive)
+        }
 
         const bgImg = this.slideItemEls[index].getAttribute(this.selectors.heroBgImg);
         if(bgImg){

@@ -1,0 +1,7 @@
+@use '../tools' as *;
+
+.cast{
+    &__img{
+        border-radius: rem(12);
+    }
+}

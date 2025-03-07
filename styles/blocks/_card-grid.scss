@@ -11,6 +11,12 @@
         gap: rem(20);
     }
 
+    &--8cols{
+        --cols: 8;
+
+        gap: rem(20);
+    }
+
     &--4cols{
         --cols: 4;
 
@@ -32,5 +38,9 @@
         @include mobile{
             --cols: 1;
         }
+    }
+
+    &--2cols{
+        --cols: 2;
     }
 }
