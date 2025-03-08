@@ -16,9 +16,9 @@
             padding: rem(12);
         }
 
-        @include tablet-s{
-            @include hide;
-        }
+        // @include tablet-s{
+        //     @include hide;
+        // }
     }
 
     &--transparent{

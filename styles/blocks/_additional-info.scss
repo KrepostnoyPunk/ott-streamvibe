@@ -5,9 +5,17 @@
     grid-template-columns: 1fr;
     row-gap: rem(30);
 
+    @include laptop{
+        row-gap: rem(24);
+    }
+
+    @include mobile{
+        row-gap: rem(20);
+    }
+
     &__item{
         display: grid;
-        row-gap: rem(14);
+        row-gap: fluid(14, 10);
     }
 
     &__content{
@@ -26,6 +34,10 @@
             background-color: var(--dark-color);
             border: var(--border-thin);
             border-radius: rem(8);
+
+            @include laptop{
+                padding: rem(6) rem(12);
+            }
         }
     }
 
@@ -34,6 +46,9 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: rem(20);
 
+        @include laptop{
+            column-gap: rem(16);
+        }
         &-item{
             display: flex;
             flex-direction: column;
@@ -43,6 +58,13 @@
             border: var(--border-thin);
             border-radius: rem(8);
             background-color: var(--dark-color);
+
+            @include laptop{
+                row-gap: rem(2);
+                padding: rem(12);
+            }
+
+            
         }
     }
 
@@ -50,11 +72,15 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        column-gap: rem(10);
+        column-gap: fluid(10, 8);
         background-color: var(--dark-color);
         border: var(--border-thin);
-        padding: rem(14);
+        padding: fluid(14, 10);
         border-radius: rem(8);
+
+        @include laptop-s{
+            max-width: rem(600);
+        }
 
         &-img{
             border-radius: rem(8);

@@ -5,10 +5,20 @@
     row-gap: fluid(100, 60);
 
     &__bottom{
+        --columnWidth: 66%;
+
         display: grid;
-        grid-template-columns: 66% auto;
-        column-gap: rem(20);
-        width: 100%;
+        grid-template-columns: var(--columnWidth) auto;
+        max-width: 100%;
+
+        @include laptop-s{
+            grid-template-columns: 1fr;
+            row-gap: rem(20);
+        }
+
+        @include tablet-above{
+            column-gap: rem(20);
+        }
     }
 
     &__content{

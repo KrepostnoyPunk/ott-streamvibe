@@ -8,10 +8,21 @@
     background-color: var(--dark-color-6);
     border: var(--border-thin);
 
+    @include laptop{
+        row-gap: rem(16);
+        padding: rem(30);
+    }
+
+    @include mobile{
+        padding: rem(24);
+    }
+
     &__header{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        column-gap: 2rem;
+        white-space: nowrap;
     }
 
     &__tile{

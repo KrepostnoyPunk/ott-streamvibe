@@ -15,6 +15,14 @@
         --cols: 8;
 
         gap: rem(20);
+
+        @include tablet{
+            gap: rem(10);
+        }
+
+        @include mobile{
+            --cols: 4;
+        }
     }
 
     &--4cols{
