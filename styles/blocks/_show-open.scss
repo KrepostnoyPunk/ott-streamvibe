@@ -1,0 +1,7 @@
+@use '../tools' as *;
+
+.show-open{
+    &__list{
+        display: grid;
+    }
+}

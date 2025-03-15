@@ -27,7 +27,8 @@ class Tabs{
         }
 
         this.bindEvents()
-        this.checkWindowSize()      
+        this.checkWindowSize()
+       
     }
 
     updateUI(){
@@ -57,14 +58,14 @@ class Tabs{
         const windowSize = window.innerWidth;
 
         if(windowSize <= 1024){
-            if(this.state.activeIndex !=1){ // if current active index was not selected by user
+            if(this.state.activeIndex != 1){ // if current active index was not selected by user
                 this.tabsEls[1].classList.remove(this.stateClasses.isActive); // remove is-active
+            } else {
+                this.tabsEls.forEach(tab => {
+                    tab.classList.add(this.stateClasses.isActive);
+                })
             }
-        } else {
-            this.tabsEls.forEach(tab => {
-                tab.classList.add(this.stateClasses.isActive);
-            })
-        }
+        } 
     }
 
     bindEvents(){

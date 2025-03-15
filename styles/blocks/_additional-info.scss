@@ -49,6 +49,7 @@
         @include laptop{
             column-gap: rem(16);
         }
+
         &-item{
             display: flex;
             flex-direction: column;
@@ -63,8 +64,6 @@
                 row-gap: rem(2);
                 padding: rem(12);
             }
-
-            
         }
     }
 

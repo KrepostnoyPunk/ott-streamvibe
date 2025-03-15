@@ -67,7 +67,7 @@ class Slider{
 
         this.slideItemEls[index].classList.add(this.stateClasses.isActive)
 
-        if(document.querySelector(this.selectors.pageMark)){
+        if(this.sliderControlsEl.querySelector(this.selectors.pageMark)){
             this.pageMarkEls[index].classList.add(this.stateClasses.isActive)
         }
 

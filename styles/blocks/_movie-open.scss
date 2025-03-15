@@ -3,6 +3,7 @@
 .movie-open{
     display: grid;
     row-gap: fluid(100, 60);
+    padding-bottom: var(--section-padding-bottom);
 
     &__bottom{
         --columnWidth: 66%;
@@ -27,6 +28,22 @@
 
         @include laptop{
             row-gap: rem(20);
+        }
+
+        @include tablet-s{
+            display: contents;
+        }
+    }
+
+    &__tile{
+        &:nth-child(1){
+            order: -1;
+        }
+    }
+
+    &__info{
+        @include tablet-s{
+            order: -1;
         }
     }
 }

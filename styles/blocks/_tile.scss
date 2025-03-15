@@ -20,9 +20,9 @@
         display: grid;
         row-gap: fluid(30, 16);
         
-        &:first-child{
-            row-gap: fluid(14, 10);
-        }
+        // &:first-child{
+        //     row-gap: fluid(14, 10);
+        // }
     }
 
     &__header{

@@ -12,6 +12,16 @@
         }
      }
 
+    &--movie-open{
+        
+        .slider__slides-wrapper{
+            display: grid;
+            overflow: hidden;
+            grid-template-columns: 100%;
+            grid-auto-flow: column;
+        }
+    }
+
     @include tablet-s{
         display: grid;
         row-gap: rem(24);
@@ -35,6 +45,11 @@
 
         @include tablet-s{
             width: auto;
+
+            @include show;
+
+            transform: translateX(0);
+            position: initial;
         }
 
         &:not(.is-active){
@@ -44,12 +59,13 @@
         }
     }
 
-    &:not(.slider--hero){
+    &:has(.slider--hero),
+    &:has(.slider--movie-open){
         .slider__slide{
             @include tablet-s{
-                @include show;
-                transform: translateX(0);
-                position: initial;
+                transform: translateX(-100%);
+                position: absolute;
+                @include hide;
             }
         }
     }

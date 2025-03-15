@@ -666,6 +666,9 @@ a[aria-label]::before, button[aria-label]::before {
 .icon--genres-before {
   --iconImg: url("../../assets/icons/icon--genres.svg");
 }
+.icon--watch {
+  --iconImg: url("../../assets/icons/icon--watch.svg");
+}
 
 .hero {
   row-gap: clamp(3.125rem, 1.493285124rem + 6.694214876vw, 8.1875rem);
@@ -920,6 +923,11 @@ a[aria-label]::before, button[aria-label]::before {
 }
 @media (width <= 47.99875rem) {
   .card-grid--8cols {
+    --cols: 6;
+  }
+}
+@media (width <= 30.06125rem) {
+  .card-grid--8cols {
     --cols: 4;
   }
 }
@@ -1026,6 +1034,12 @@ a[aria-label]::before, button[aria-label]::before {
   grid-template-columns: 100%;
   grid-auto-flow: column;
 }
+.slider--movie-open .slider__slides-wrapper {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 100%;
+  grid-auto-flow: column;
+}
 @media (width <= 61.93625rem) {
   .slider {
     display: grid;
@@ -1052,6 +1066,10 @@ a[aria-label]::before, button[aria-label]::before {
 @media (width <= 61.93625rem) {
   .slider__slide {
     width: auto;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    position: initial;
   }
 }
 .slider__slide:not(.is-active) {
@@ -1061,11 +1079,11 @@ a[aria-label]::before, button[aria-label]::before {
   visibility: hidden;
 }
 @media (width <= 61.93625rem) {
-  .slider:not(.slider--hero) .slider__slide {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-    position: initial;
+  .slider:has(.slider--hero) .slider__slide, .slider:has(.slider--movie-open) .slider__slide {
+    transform: translateX(-100%);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -1127,9 +1145,6 @@ a[aria-label]::before, button[aria-label]::before {
 .tile__inner {
   display: grid;
   row-gap: clamp(1rem, 0.7179752066rem + 1.1570247934vw, 1.875rem);
-}
-.tile__inner:first-child {
-  row-gap: clamp(0.625rem, 0.5444214876rem + 0.3305785124vw, 0.875rem);
 }
 .tile__header {
   display: flex;
@@ -1759,6 +1774,7 @@ a[aria-label]::before, button[aria-label]::before {
 .movie-open {
   display: grid;
   row-gap: clamp(3.75rem, 2.944214876rem + 3.305785124vw, 6.25rem);
+  padding-bottom: var(--section-padding-bottom);
 }
 .movie-open__bottom {
   --columnWidth: 66%;
@@ -1786,6 +1802,135 @@ a[aria-label]::before, button[aria-label]::before {
   .movie-open__content {
     row-gap: 1.25rem;
   }
+}
+@media (width <= 61.93625rem) {
+  .movie-open__content {
+    display: contents;
+  }
+}
+.movie-open__tile:nth-child(1) {
+  order: -1;
+}
+@media (width <= 61.93625rem) {
+  .movie-open__info {
+    order: -1;
+  }
+}
+
+.show-open-card {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  padding-block: 2.5rem;
+  border-top: var(--border-thin);
+}
+.show-open-card__player {
+  height: 100%;
+  border-radius: 0.75rem;
+  border: var(--border-thin);
+}
+.show-open-card__info {
+  display: grid;
+  row-gap: 0.875rem;
+}
+.show-open-card__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 2.5rem;
+}
+.show-open-card__duration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.625rem;
+  border: var(--border-thin);
+  background-color: var(--dark-color);
+  border-radius: 0.5rem;
+  max-height: 2.5rem;
+}
+
+.show-open__list {
+  display: grid;
+}
+
+.seasons-expandable {
+  display: grid;
+  row-gap: 1.25rem;
+}
+.seasons-expandable__cell {
+  background-color: var(--dark-color-6);
+  padding: 1.5rem 3.125rem;
+  border-radius: clamp(0.625rem, 0.5847107438rem + 0.1652892562vw, 0.75rem);
+}
+.seasons-expandable__details[open] .seasons-expandable__title::after {
+  rotate: 360deg;
+}
+.seasons-expandable__details[open] + .seasons-expandable__content {
+  grid-template-rows: 1fr;
+}
+.seasons-expandable__summary {
+  color: var(--light-color);
+  list-style: none;
+}
+.seasons-expandable__summary::-webkit-details-marker {
+  display: none;
+}
+@media (any-hover: none) {
+  .seasons-expandable__summary:active {
+    color: var(--accent-color);
+    cursor: pointer;
+  }
+}
+@media (any-hover: hover) {
+  .seasons-expandable__summary:hover {
+    color: var(--accent-color);
+    cursor: pointer;
+  }
+}
+.seasons-expandable__title {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  color: inherit;
+  position: relative;
+  padding-right: 3.125rem;
+  transition-duration: var(--transition-duration);
+  max-height: 3.875rem;
+}
+.seasons-expandable__title::after {
+  --size: 3.25rem;
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  content: url("../../assets/icons/icon--arrow-downsvg.svg");
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  border-radius: 6.25rem;
+  border: var(--border-thin);
+  transition-duration: var(--transition-duration);
+  background-color: var(--dark-color);
+  rotate: 180deg;
+}
+.seasons-expandable__additional {
+  color: var(--grey-color-60);
+}
+.seasons-expandable__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition-duration: var(--transition-duration);
+}
+.seasons-expandable__content-inner {
+  overflow: hidden;
+}
+.seasons-expandable__content-body {
+  padding-top: clamp(1.25rem, 1.048553719rem + 0.826446281vw, 1.875rem);
 }
 
 .free-trial {

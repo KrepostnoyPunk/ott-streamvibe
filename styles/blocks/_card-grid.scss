@@ -14,6 +14,7 @@
     &--8cols{
         --cols: 8;
 
+        // grid-auto-flow: column;
         gap: rem(20);
 
         @include tablet{
@@ -21,6 +22,10 @@
         }
 
         @include mobile{
+            --cols: 6;
+        }
+
+        @include mobile-s{
             --cols: 4;
         }
     }
