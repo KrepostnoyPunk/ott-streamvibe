@@ -1,0 +1,38 @@
+@use '../tools' as *;
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+
+    &__input{
+        --size: #{rem(28)};
+
+        @include square(var(--size));
+
+        appearance: none;
+        background-color: var(--dark-color);
+        border: var(--border-thin);
+        border-radius: rem(4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include hover{
+            border-color: var(--light-color);
+            cursor: pointer;
+        }
+
+        &::after{
+            content: '✔';
+            color: var(--light-color);
+            transition-duration: var(--transition-duration);
+        }
+
+        &:not(:checked){
+            &::after{
+                @include hide;
+            }
+        }
+    }
+}

@@ -12,6 +12,12 @@
     @include visually-hidden;
 }
 
+.laptop-s-hidden{
+    @include laptop-s{
+        display: none !important;
+    }
+}
+
 // скрытие на планшетах, но видимость на других устройствах
 .tablet-hidden{
     @include tablet{

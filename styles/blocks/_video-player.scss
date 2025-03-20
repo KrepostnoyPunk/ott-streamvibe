@@ -1,0 +1,46 @@
+@use '../tools' as *;
+
+.video-player{
+    position: relative;
+    transition-duration: var(--transition-duration);
+    width: 100%;
+    max-width: rem(172);
+
+    @include mobile-s{
+        display: flex;
+        column-gap: rem(18);
+        align-items: center;
+
+        &::after {
+            content: "0" counter(custom-counter);
+            font-size: rem(24);
+            font-weight: 600;
+        }
+    }
+
+    @include hover{
+        opacity: .7;
+    }
+
+    &__video{
+        width: 100%;
+        height: rem(118);
+        object-fit: cover;
+    }
+
+    &__panel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+
+        &:not(.is-active){
+            @include hide;
+        }
+    }
+
+    &__btn{
+        @include reset-btn;
+    }
+}

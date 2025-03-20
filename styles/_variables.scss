@@ -24,6 +24,7 @@
     // borders
     --border: 4px solid var(--dark-color-12);
     --border-thin: 1px solid var(--dark-color-15);
+    --border-thick: 6px solid var(--dark-color-15);
 
     // размеры контейнера
     --container-width: #{rem(1597)}; // такой синтаксис нужен чтобы функция scss корректно работала с переменными css

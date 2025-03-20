@@ -8,6 +8,14 @@
         background-color: var(--dark-color-6);
         padding: rem(24) rem(50);
         border-radius: fluid(12, 10);
+
+        @include laptop{
+            padding: rem(40);
+        }
+
+        @include mobile{
+            padding: rem(16) rem(20);
+        }
     }
 
     &__details{

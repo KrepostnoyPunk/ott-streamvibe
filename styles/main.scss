@@ -46,9 +46,15 @@
 @use './blocks/cast';
 @use './blocks/movie-open';
 
+@use './blocks/video-player';
 @use './blocks/show-open-card';
 @use './blocks/show-open';
 @use './blocks/seasons-expandable';
+
+@use './blocks/checkbox';
+@use './blocks/field';
+@use './blocks/select';
+@use './blocks/support-form';
 
 @use './blocks/free-trial';
 

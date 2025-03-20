@@ -1,0 +1,56 @@
+@use '../tools' as *;
+
+.field{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1rem;
+
+    &__label{
+        color: var(--light-color);
+        font-weight: 600;
+    }
+
+    &__input{
+        width: 100%;
+        border-radius: rem(8);
+        padding-inline: rem(20);
+        background-color: var(--dark-color);
+        border: var(--border-thin);
+        height: rem(67);
+        color: var(--light-color);
+
+        @include hover{
+            border-color:  var(--light-color);
+            cursor: pointer;
+        }
+
+        @include mobile{
+            height: rem(53);
+        }
+    }
+
+    &__body{
+        display: flex;
+        column-gap: 1rem;
+        width: 100%;
+    }
+
+    &__required{
+        color: var(--red-color);
+    }
+
+    textarea.field__input {
+        min-height: rem(163);
+        resize: vertical;
+        padding-block: rem(20);
+
+        @include laptop{
+            padding-block: rem(16);
+        }
+
+        @include mobile{
+            min-height: rem(109);
+        }
+    }
+}

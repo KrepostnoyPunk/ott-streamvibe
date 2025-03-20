@@ -3,5 +3,26 @@
 .show-open{
     &__list{
         display: grid;
+        counter-reset: custom-counter;
+       
+        @include mobile{
+            row-gap: rem(20);
+        }
+    }
+
+    &__item{
+        counter-increment: custom-counter;
+
+        &::before {
+            content: "0" counter(custom-counter);
+            font-size: rem(24);
+            font-weight: 600;
+        }
+
+        &::before{
+            @include mobile-s{
+                display: none;
+            }
+        }
     }
 }
