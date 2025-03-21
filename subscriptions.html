@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVibe | Subscriptions</title>
+    <link rel="icon" href="./assets/icons/mylabel.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body>
+    <!-- header -->
+    <header class="header header--transparent" data-js-header>
+        <div class="header__top">
+            <div class="header__menu-inner container">
+                <a href="./index.html" class="header-logo logo" title="Lead to NextGen homepage-mark" aria-label="Lead to NextGen homepage-mark">
+                    <img src="./assets/icons/Logo.svg" alt="NextGen company logo" class="logo__img" width="200" height="60">
+                </a>
+                <div class="header__mobile-overlay" data-js-header-mobile-overlay>
+                    <nav class="header-menu">
+                        <ul class="header-menu__list">
+                            <li class="header-menu__item">
+                                <a href="./index.html" class="header-menu__link">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="./catalog.html" class="header-menu__link">
+                                    Movies & Shows
+                                </a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="./support.html" class="header-menu__link">
+                                    Support
+                                </a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="./subscriptions.html" class="header-menu__link  is-active">
+                                    Subscriptions
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__actions actions">
+                        <button class="actions__btn" aria-label="Open search">
+                            <span class="actions__btn-wrapper">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M29.75 29.75L22.388 22.388M22.388 22.388C24.3108 20.4653 25.5 17.809 25.5 14.875C25.5 9.00697 20.743 4.25 14.875 4.25C9.00697 4.25 4.25 9.00697 4.25 14.875C4.25 20.743 9.00697 25.5 14.875 25.5C17.809 25.5 20.4653 24.3108 22.388 22.388Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
+                        <button class="actions__btn" aria-label="Open notifications">
+                            <span class="actions__btn-wrapper">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.0472 24.1991C23.7312 23.8807 26.3193 23.2497 28.7741 22.3435C26.7386 20.0841 25.4997 17.093 25.4997 13.8125V12.8197C25.4999 12.7965 25.5 12.7732 25.5 12.75C25.5 8.05558 21.6944 4.25 17 4.25C12.3056 4.25 8.5 8.05558 8.5 12.75L8.49972 13.8125C8.49972 17.093 7.2608 20.0841 5.22534 22.3435C7.68032 23.2498 10.2686 23.8808 12.9528 24.1992M21.0472 24.1991C19.72 24.3565 18.3693 24.4375 16.9997 24.4375C15.6303 24.4375 14.2798 24.3565 12.9528 24.1992M21.0472 24.1991C21.1789 24.6091 21.25 25.0462 21.25 25.5C21.25 27.8472 19.3472 29.75 17 29.75C14.6528 29.75 12.75 27.8472 12.75 25.5C12.75 25.0463 12.8211 24.6091 12.9528 24.1992" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <button class="header__burger-btn burger-btn icon-container visible-tablet-s" type="button" title="Open navigation menu" aria-label="Open navigation menu" data-js-header-burger-btn>
+                    <span class="burger-btn__lines-container">
+                        <span class="burger-btn__line"></span>
+                        <span class="burger-btn__line"></span>
+                        <span class="burger-btn__line"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- main -->
+     <main class="main">
+        <!-- plans section -->
+        <section class="section section--padding-top">
+            <header class="section__header container">
+                <div class="section__info">
+                    <h2 class="section__title h3">
+                        Choose the plan that's right for you
+                    </h2>
+                    <div class="section__description">
+                        <p>
+                            Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!
+                        </p>
+                    </div>
+                </div>
+                <div class="section__tabs-controls tabs-controls" data-js-tabs-controls="tabs-1">
+                    <button class="tabs-controls__btn is-active" type="button" id="tab-1" role="tab" aria-controls="tabpanel-1" aria-selected="true" tabindex="0" data-js-tabs-btn>
+                        Monthly
+                    </button>
+                    <button class="tabs-controls__btn" type="button" id="tab-2" role="tab" aria-controls="tabpanel-2" aria-selected="true" tabindex="-1" data-js-tabs-btn>
+                        Yearly
+                    </button>
+                </div>
+            </header>
+            <div class="section__body">
+                <div class="tabs container" data-js-tabs-root="tabs-1">
+                    <ul class="tabs__tab is-active card-grid card-grid--3cols" data-js-tabs-tab>
+                        <li class="tile">
+                            <div class="plans-card">
+                                <div class="plans-card__info">
+                                    <h4 class="plans-card__title">
+                                        Basic Plan
+                                    </h4>
+                                    <div class="plans-card__description">
+                                        <p>
+                                            Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="plans-card__price">
+                                    <p>
+                                        <span class="plans-card__accent-area">
+                                            $9.99
+                                        </span>
+                                        /month
+                                    </p>
+                                </div>
+                                <div class="plans-card__actions">
+                                    <a href="/" class="plans-card__btn btn btn--dark">
+                                        Start Free Trial
+                                    </a>
+                                    <a href="" class="plans-card__accent-btn btn">
+                                        Choose Plan
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tile">
+                            <div class="plans-card">
+                                <div class="plans-card__info">
+                                    <h4 class="plans-card__title">
+                                        Basic Plan
+                                    </h4>
+                                    <div class="plans-card__description">
+                                        <p>
+                                            Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="plans-card__price">
+                                    <p>
+                                        <span class="plans-card__accent-area">
+                                            $9.99
+                                        </span>
+                                        /month
+                                    </p>
+                                </div>
+                                <div class="plans-card__actions">
+                                    <a href="/" class="plans-card__btn btn btn--dark">
+                                        Start Free Trial
+                                    </a>
+                                    <a href="" class="plans-card__accent-btn btn">
+                                        Choose Plan
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tile">
+                            <div class="plans-card">
+                                <div class="plans-card__info">
+                                    <h4 class="plans-card__title">
+                                        Basic Plan
+                                    </h4>
+                                    <div class="plans-card__description">
+                                        <p>
+                                            Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="plans-card__price">
+                                    <p>
+                                        <span class="plans-card__accent-area">
+                                            $9.99
+                                        </span>
+                                        /month
+                                    </p>
+                                </div>
+                                <div class="plans-card__actions">
+                                    <a href="/" class="plans-card__btn btn btn--dark">
+                                        Start Free Trial
+                                    </a>
+                                    <a href="" class="plans-card__accent-btn btn">
+                                        Choose Plan
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="tabs__tab card-grid card-grid--3cols" data-js-tabs-tab>
+                        <li class="tile">
+                            A
+                        </li>
+                        <li class="tile">
+                            B
+                        </li>
+                        <li class="tile">
+                            C
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- subscriptions table section -->
+        <section class="section">
+            <header class="section__header container">
+                <div class="section__info">
+                    <h2 class="section__title h3">
+                        Choose the plan that's right for you
+                    </h2>
+                    <div class="section__description">
+                        <p>
+                            Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!
+                        </p>
+                    </div>
+                </div>
+                <div class="section__tabs-controls tabs-controls tabs-controls--3 visible-tablet" data-js-tabs-controls="tabs-2">
+                    <button class="tabs-controls__btn" type="button" id="tab-1" role="tab" aria-controls="tabpanel-1" aria-selected="false" tabindex="-1" data-js-tabs-btn>
+                        Basic
+                    </button>
+                    <button class="tabs-controls__btn is-active" type="button" id="tab-2" role="tab" aria-controls="tabpanel-2" aria-selected="true" tabindex="0" data-js-tabs-btn>
+                        Standard
+                    </button>
+                    <button class="tabs-controls__btn" type="button" id="tab-3" role="tab" aria-controls="tabpanel-3" aria-selected="false" tabindex="-1" data-js-tabs-btn>
+                        Premium
+                    </button>
+                </div>
+            </header>
+            <div class="section__body container">
+                <div class="subscriptions-table tablet-hidden">
+                    <table class="subscriptions-table__table">
+                        <tr class="subscriptions-table__table-row subscriptions-table__table-row--heading">
+                            <th class="subscriptions-table__table-header">
+                                Features
+                            </th>
+                            <th class="subscriptions-table__table-header">
+                                Basic
+                            </th>
+                            <th class="subscriptions-table__table-header">
+                                Standard
+                                <span class="badge">
+                                    Popular
+                                </span>
+                            </th>
+                            <th class="subscriptions-table__table-header">
+                                Premium
+                            </th>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                        <tr class="subscriptions-table__table-row">
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                            <td class="subscriptions-table__table-data">
+                                Price
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tabs visible-tablet" data-js-tabs-root="tabs-2">
+                    <ul class="tabs__tab card-grid card-grid--3cols card-grid--3cols-alt" data-js-tabs-tab>
+                        <li class="tile tile--darkest-bg">
+                            A
+                        </li>
+                    </ul>
+                    <ul class="tabs__tab is-active card-grid card-grid--3cols card-grid--3cols-alt" data-js-tabs-tab>
+                        <li class="tile tile--darkest-bg">
+                            <div class="subscription-card">
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell subscription-card__cell--wide">
+                                    <p class="subscription-card__title">
+                                        Content
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            Access to a wider selection of movies and shows, including most new releases and exclusive content
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell subscription-card__cell--wide">
+                                    <p class="subscription-card__title">
+                                        Devices
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            Watch on Two device simultaneously
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="subscription-card__cell">
+                                    <p class="subscription-card__title">
+                                        Price
+                                    </p>
+                                    <div class="subscription-card__description">
+                                        <p>
+                                            $12.99/Month
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="tabs__tab card-grid card-grid--3cols card-grid--3cols-alt" data-js-tabs-tab>
+                        <li class="tile tile--darkest-bg">
+                            С
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </section>
+        <!-- free trial section -->
+         <section class="section">
+            <div class="section__body container">
+                <div class="free-trial">
+                    <div class="free-trial__info">
+                        <p class="h2 free-trial__title">
+                            Start your free trial today!
+                        </p>
+                        <p class="free-trial__description">
+                            This is a clear and concise call to action that encourages users to sign up for a free trial of StreamVibe.
+                        </p>
+                    </div>
+                    <a href="/" class="free-trial__btn btn">
+                        Start a Free Trail
+                    </a>
+                </div>
+            </div>
+         </section>
+     </main>
+     <!-- footer -->
+      <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__main">
+                <nav class="footer__menu">
+                    <div class="footer__menu-column">
+                        <a href="./index.html" class="footer__menu-title h6">
+                            Home
+                        </a>
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Categories
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Devices
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Pricing
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    FAQ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-column">
+                        <a href="./catalog.html" class="footer__menu-title h6">
+                            Movies
+                        </a>
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Genres
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Trending
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    New Release
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Popular
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-column">
+                        <a href="./catalog.html" class="footer__menu-title h6">
+                            Shows
+                        </a>
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Genres
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Trending
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    New Release
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Popular
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-column">
+                        <a href="./support.html" class="footer__menu-title h6">
+                            Support
+                        </a>
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-column">
+                        <a href="./subscriptions.html" class="footer__menu-title h6">
+                            Subscription
+                        </a>
+                        <ul class="footer__menu-list">
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Plans
+                                </a>
+                            </li>
+                            <li class="footer__menu-item">
+                                <a href="/" class="footer__menu-link">
+                                    Features
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-column">
+                        <a href="/" class="footer__menu-title h6">
+                            Connect With Us
+                        </a>
+                        <div class="footer__soc1als soc1als">
+                            <ul class="soc1als__list">
+                                <li class="soc1als__item">
+                                    <a href="/" class="soc1als__link icon-container">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_109_1783)">
+                                                <path d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.3882 22.954 10.125 23.8542V15.4687H7.07812V12H10.125V9.35625C10.125 6.34875 11.9166 4.6875 14.6576 4.6875C15.9701 4.6875 17.3438 4.92187 17.3438 4.92187V7.875H15.8306C14.34 7.875 13.875 8.80008 13.875 9.75V12H17.2031L16.6711 15.4687H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_109_1783">
+                                                <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                    </a>
+                                </li>
+                                <li class="soc1als__item">
+                                    <a href="/" class="soc1als__link icon-container">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_109_1786)">
+                                                <path d="M7.55016 21.75C16.6045 21.75 21.5583 14.2467 21.5583 7.74186C21.5583 7.53092 21.5536 7.3153 21.5442 7.10436C22.5079 6.40746 23.3395 5.54425 24 4.5553C23.1025 4.9546 22.1496 5.21538 21.1739 5.32874C22.2013 4.71291 22.9705 3.74547 23.3391 2.60577C22.3726 3.17856 21.3156 3.58261 20.2134 3.80061C19.4708 3.01156 18.489 2.48912 17.4197 2.31405C16.3504 2.13899 15.2532 2.32105 14.2977 2.8321C13.3423 3.34314 12.5818 4.15471 12.1338 5.14131C11.6859 6.12792 11.5754 7.23462 11.8195 8.2903C9.86249 8.19209 7.94794 7.6837 6.19998 6.7981C4.45203 5.91249 2.90969 4.66944 1.67297 3.14952C1.0444 4.23324 0.852057 5.51565 1.13503 6.73609C1.418 7.95654 2.15506 9.02345 3.19641 9.71999C2.41463 9.69517 1.64998 9.48468 0.965625 9.10592V9.16686C0.964925 10.3041 1.3581 11.4066 2.07831 12.2868C2.79852 13.167 3.80132 13.7706 4.91625 13.995C4.19206 14.1931 3.43198 14.222 2.69484 14.0794C3.00945 15.0574 3.62157 15.9129 4.44577 16.5263C5.26997 17.1398 6.26512 17.4806 7.29234 17.5012C5.54842 18.8711 3.39417 19.6141 1.17656 19.6106C0.783287 19.61 0.390399 19.5859 0 19.5384C2.25286 20.9837 4.87353 21.7514 7.55016 21.75Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_109_1786">
+                                                <rect width="24" height="24" fill="white"/>
+                                                </clipPath>
+                                                </defs>
+                                            </svg>
+                                    </a>
+                                </li>
+                                <li class="soc1als__item">
+                                    <a href="/" class="soc1als__link icon-container">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.8647 1.59961H3.13554C2.72832 1.59961 2.33777 1.76138 2.04982 2.04933C1.76187 2.33728 1.6001 2.72783 1.6001 3.13505V20.8642C1.6001 21.2714 1.76187 21.6619 2.04982 21.9499C2.33777 22.2378 2.72832 22.3996 3.13554 22.3996H20.8647C21.2719 22.3996 21.6624 22.2378 21.9504 21.9499C22.2383 21.6619 22.4001 21.2714 22.4001 20.8642V3.13505C22.4001 2.72783 22.2383 2.33728 21.9504 2.04933C21.6624 1.76138 21.2719 1.59961 20.8647 1.59961ZM7.79965 19.3186H4.67243V9.38516H7.79965V19.3186ZM6.23388 8.00861C5.87915 8.00661 5.53296 7.89958 5.239 7.70102C4.94504 7.50246 4.71649 7.22127 4.58219 6.89294C4.44789 6.56461 4.41386 6.20386 4.48439 5.8562C4.55492 5.50855 4.72686 5.18958 4.9785 4.93955C5.23014 4.68952 5.5502 4.51964 5.8983 4.45134C6.2464 4.38304 6.60693 4.41939 6.93439 4.5558C7.26185 4.6922 7.54156 4.92255 7.73823 5.21778C7.9349 5.51301 8.03971 5.85988 8.03943 6.21461C8.04278 6.45211 7.99827 6.68784 7.90857 6.90777C7.81887 7.1277 7.68582 7.32732 7.51733 7.49473C7.34884 7.66215 7.14837 7.79392 6.92787 7.88221C6.70736 7.97049 6.47134 8.01348 6.23388 8.00861ZM19.3263 19.3273H16.2005V13.9005C16.2005 12.3001 15.5202 11.8061 14.642 11.8061C13.7147 11.8061 12.8047 12.5052 12.8047 13.9409V19.3273H9.67743V9.39239H12.6848V10.7689H12.7252C13.0271 10.1579 14.0844 9.11361 15.6979 9.11361C17.4428 9.11361 19.3278 10.1493 19.3278 13.1826L19.3263 19.3273Z" fill="white"></path>
+                                            </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer__extra">
+                <p class="footer__extra-copywright">
+                    @<time datetime="2025">2025</time> streamvibe, All Rights Reserved
+                </p>
+                <div class="footer__extra-menu">
+                    <ul class="footer__extra-menu-list">
+                        <li class="footer__extra-menu-item">
+                            <a href="/" class="footer__extra-menu-link">
+                                Terms of Use
+                            </a>
+                        </li>
+                        <li class="footer__extra-menu-item">
+                            <a href="/" class="footer__extra-menu-link">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="footer__extra-menu-item">
+                            <a href="/" class="footer__extra-menu-link">
+                                Cookie Policy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+@use '../tools' as *;
+
+.subscription-card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(20) rem(24);
+
+    &__cell{
+        display: grid;
+        row-gap: rem(4);
+
+        &--wide{
+            grid-column: -1 / 1;
+        }
+    }
+
+    &__description{
+        color: var(--light-color);
+    }
+}

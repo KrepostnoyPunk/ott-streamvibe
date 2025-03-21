@@ -757,6 +757,9 @@ a[aria-label]::before, button[aria-label]::before {
     padding-inline: 1.25rem;
   }
 }
+.section--padding-top {
+  padding-top: clamp(2.5rem, 1.291322314rem + 4.958677686vw, 6.25rem);
+}
 
 .slider-controls__inner {
   display: flex;
@@ -957,6 +960,11 @@ a[aria-label]::before, button[aria-label]::before {
 }
 @media (width <= 47.99875rem) {
   .card-grid--3cols {
+    --cols: 1;
+  }
+}
+@media (width <= 63.99875rem) {
+  .card-grid--3cols-alt {
     --cols: 1;
   }
 }
@@ -1173,6 +1181,9 @@ a[aria-label]::before, button[aria-label]::before {
 .tile--2 {
   order: -1;
 }
+.tile--darkest-bg {
+  background-color: var(--dark-color-6);
+}
 
 .accordion-cell {
   padding: 1.875rem 2.125rem;
@@ -1354,12 +1365,16 @@ a[aria-label]::before, button[aria-label]::before {
 }
 
 .tabs-controls {
+  --cols: 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
   padding: 0.625rem;
   border: var(--border-thin);
   background-color: var(--dark-color-6);
   border-radius: 0.625rem;
+}
+.tabs-controls--3 {
+  --cols: 3;
 }
 @media (width <= 90.06125rem) {
   .tabs-controls {
@@ -2265,6 +2280,62 @@ a[aria-label]::before, button[aria-label]::before {
 }
 .support-form__btn {
   min-width: 10.8125rem;
+}
+
+.subscription-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.5rem;
+}
+.subscription-card__cell {
+  display: grid;
+  row-gap: 0.25rem;
+}
+.subscription-card__cell--wide {
+  grid-column: -1/1;
+}
+.subscription-card__description {
+  color: var(--light-color);
+}
+
+.badge {
+  background-color: var(--red-color);
+  margin-left: 0.5rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 0.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-width: 4.4375rem;
+}
+
+.subscriptions-table {
+  display: flex;
+  justify-content: center;
+}
+.subscriptions-table__table {
+  width: 100%;
+  border-radius: 0.625rem;
+  background-color: var(--dark-color);
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.subscriptions-table__table-row--heading {
+  background-color: var(--dark-color-6);
+}
+.subscriptions-table__table-header, .subscriptions-table__table-data {
+  text-align: start;
+  padding: 1.875rem;
+  border: var(--border-thin);
+}
+.subscriptions-table__table-header {
+  color: var(--light-color);
+  font-weight: 600;
+}
+.subscriptions-table__table-header:first-child {
+  border-top-left-radius: 0.625rem;
+}
+.subscriptions-table__table-header:last-child {
+  border-top-right-radius: 0.625rem;
 }
 
 .free-trial {

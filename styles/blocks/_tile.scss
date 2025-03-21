@@ -45,4 +45,8 @@
     &--2{
         order: -1;
     }
+
+    &--darkest-bg{
+        background-color: var(--dark-color-6);
+    }
 }

@@ -1,0 +1,40 @@
+@use '../tools' as *;
+
+.subscriptions-table{
+    display: flex;
+    justify-content: center;
+
+    &__table{
+        width: 100%;
+        border-radius: rem(10);
+        background-color: var(--dark-color);
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    &__table-row{
+        &--heading{
+            background-color: var(--dark-color-6);
+        }
+    }
+
+    &__table-header,
+    &__table-data {
+        text-align: start;
+        padding: rem(30);
+        border: var(--border-thin);
+    }
+
+    &__table-header {
+        color: var(--light-color);
+        font-weight: 600;
+
+        &:first-child {
+            border-top-left-radius: rem(10);
+        }
+
+        &:last-child {
+            border-top-right-radius: rem(10);
+        }
+    }
+}

@@ -1,12 +1,18 @@
 @use '../tools' as *;
 
 .tabs-controls{
+    --cols: 2;
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(var(--cols), 1fr);
     padding: rem(10);
     border: var(--border-thin);
     background-color: var(--dark-color-6);
     border-radius: rem(10);
+
+    &--3{
+        --cols: 3;
+    }
 
     @include laptop{
         padding: rem(8);

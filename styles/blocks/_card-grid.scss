@@ -14,7 +14,6 @@
     &--8cols{
         --cols: 8;
 
-        // grid-auto-flow: column;
         gap: rem(20);
 
         @include tablet{
@@ -50,6 +49,12 @@
 
         @include mobile{
             --cols: 1;
+        }
+
+        &-alt{
+            @include tablet{
+                --cols: 1;
+            }
         }
     }
 

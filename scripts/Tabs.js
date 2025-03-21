@@ -19,7 +19,8 @@ class Tabs{
 
     constructor(rootEl){
         this.rootEl = rootEl; // root el for tabs
-        this.tabsControlsEl = document.querySelector(this.selectors.controls); // root el for buttons
+        this.tabGroupId = this.rootEl.getAttribute("data-js-tabs-root");
+        this.tabsControlsEl = document.querySelector(`${this.selectors.controls}[data-js-tabs-controls="${this.tabGroupId}"]`);
         this.tabBtnEls = this.tabsControlsEl.querySelectorAll(this.selectors.btn);
         this.tabsEls = rootEl.querySelectorAll(this.selectors.tab);
         this.state = {
@@ -43,7 +44,11 @@ class Tabs{
         })
 
         this.tabsEls.forEach((tabEl, index) => {
-            const isActive = index === activeIndex; // if index of tab equals to activeIndex === true/false
+            let isActive = index === activeIndex; // if index of tab equals to activeIndex === true/false
+
+            if (this.tabGroupId === 'catalog-tabs' && window.innerWidth > 1024) {
+                isActive = index === 1 || index === activeIndex;
+            }
 
             tabEl.classList.toggle(this.stateClasses.isActive, isActive)
         })
@@ -60,12 +65,10 @@ class Tabs{
         if(windowSize <= 1024){
             if(this.state.activeIndex != 1){ // if current active index was not selected by user
                 this.tabsEls[1].classList.remove(this.stateClasses.isActive); // remove is-active
-            } else {
-                this.tabsEls.forEach(tab => {
-                    tab.classList.add(this.stateClasses.isActive);
-                })
             }
-        } 
+        } else {
+            this.updateUI()
+        }
     }
 
     bindEvents(){

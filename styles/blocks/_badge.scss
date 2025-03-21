@@ -1,0 +1,11 @@
+@use '../tools' as *;
+
+.badge{
+    background-color: var(--red-color);
+    margin-left: rem(8);
+    padding: rem(2) rem(10);
+    border-radius: rem(2);
+    font-size: rem(14);
+    font-weight: 500;
+    min-width: rem(71);
+}
