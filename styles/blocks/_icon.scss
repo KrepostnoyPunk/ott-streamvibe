@@ -1,7 +1,7 @@
 @use '../tools' as *;
 
 .icon{
-    --iconImg: url('../../assets/icons/icon--play-btn.svg');
+    --iconImg: url('../assets/icons/icon--play-btn.svg');
 
     display: inline-flex;
     align-items: center;
