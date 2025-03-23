@@ -7,7 +7,7 @@
     justify-content: center;
 
     &__star{
-        --starImg: url('/assets/icons/star.svg');
+        --starImg: url('../assets/icons/star.svg');
         --starSize: #{rem(18)};
 
         @include square(var(--starSize));
@@ -15,7 +15,7 @@
         background: var(--starImg) center / contain no-repeat;
 
         &.is-active{
-            --starImg: url('/assets/icons/star--active.svg');
+            --starImg: url('../assets/icons/star--active.svg');
         }
     }
 
