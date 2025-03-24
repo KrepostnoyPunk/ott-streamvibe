@@ -61,7 +61,7 @@
 
             @include abs-y;
 
-            content: url('../../assets/icons/icon--arrow-downsvg.svg');
+            content: url('../assets/icons/icon--arrow-downsvg.svg');
             
             @include square(var(--size));
 

@@ -1,7 +1,7 @@
-@use '../tools' as *;
+@use 'tools' as *;
 
 .icon{
-    --iconImg: url('../../assets/icons/icon--play-btn.svg');
+    --iconImg: url('../assets/icons/icon--play-btn.svg');
 
     display: inline-flex;
     align-items: center;
@@ -19,26 +19,26 @@
     }
 
     &--plus-sign-before{
-        --iconImg: url('../../assets/icons/icon--plus-sign.svg');
+        --iconImg: url('../assets/icons/icon--plus-sign.svg');
     }
 
     &--calendar-before{
-        --iconImg: url('../../assets/icons/icon--calendar.svg');
+        --iconImg: url('../assets/icons/icon--calendar.svg');
     }
 
     &--languages-before{
-        --iconImg: url('../../assets/icons/icon--languages.svg');
+        --iconImg: url('../assets/icons/icon--languages.svg');
     }
 
     &--star-before{
-        --iconImg: url('../../assets/icons/icon--star.svg');
+        --iconImg: url('../assets/icons/icon--star.svg');
     }
 
     &--genres-before{
-        --iconImg: url('../../assets/icons/icon--genres.svg');
+        --iconImg: url('../assets/icons/icon--genres.svg');
     }
 
     &--watch{
-        --iconImg: url('../../assets/icons/icon--watch.svg');
+        --iconImg: url('../assets/icons/icon--watch.svg');
     }
 }

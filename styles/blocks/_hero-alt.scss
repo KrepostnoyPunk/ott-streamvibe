@@ -3,7 +3,7 @@
 .hero-alt{
     
     &__inner{
-        --bgImg: url('../../assets/images/hero-alt-1.jpg');
+        --bgImg: url('../assets/images/hero-alt-1.jpg');
 
         margin-top: rem(50);
         display: flex;
@@ -17,7 +17,7 @@
         border-radius: rem(12);
         
         &:nth-child(even){
-            --bgImg: url('../../assets/images/hero-alt-2.jpg');
+            --bgImg: url('../assets/images/hero-alt-2.jpg');
         }
 
         @include laptop{
